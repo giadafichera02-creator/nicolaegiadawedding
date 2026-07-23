@@ -1,86 +1,72 @@
+const scene=document.getElementById("scene");
+const seal=document.getElementById("sealBtn");
+const petals=document.getElementById("petals");
+const enter=document.getElementById("enterBtn");
+const intro=document.getElementById("intro");
+const site=document.getElementById("site");
+let opened=false;
 
-const scene = document.getElementById("envelopeScene");
-const seal = document.getElementById("sealButton");
-const petals = document.getElementById("petals");
-const enterSite = document.getElementById("enterSite");
-const intro = document.getElementById("intro");
-const weddingSite = document.getElementById("weddingSite");
-
-let opened = false;
-
-function waxSound(){
+function sound(){
   try{
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const now = ctx.currentTime;
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-
-    osc.type = "triangle";
-    osc.frequency.setValueAtTime(170, now);
-    osc.frequency.exponentialRampToValueAtTime(55, now + .18);
-
-    gain.gain.setValueAtTime(.0001, now);
-    gain.gain.exponentialRampToValueAtTime(.08, now + .02);
-    gain.gain.exponentialRampToValueAtTime(.0001, now + .22);
-
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.start(now);
-    osc.stop(now + .23);
+    const ctx=new(window.AudioContext||window.webkitAudioContext)();
+    const now=ctx.currentTime;
+    const osc=ctx.createOscillator();
+    const gain=ctx.createGain();
+    osc.type="triangle";
+    osc.frequency.setValueAtTime(170,now);
+    osc.frequency.exponentialRampToValueAtTime(55,now+.18);
+    gain.gain.setValueAtTime(.0001,now);
+    gain.gain.exponentialRampToValueAtTime(.075,now+.02);
+    gain.gain.exponentialRampToValueAtTime(.0001,now+.22);
+    osc.connect(gain);gain.connect(ctx.destination);osc.start(now);osc.stop(now+.23);
   }catch(e){}
 }
 
 function createPetals(){
-  const total = 32;
-
-  for(let i = 0; i < total; i++){
-    const petal = document.createElement("span");
-    petal.className = "petal" + (i % 7 === 0 ? " leaf" : "");
-
-    petal.style.left = `${Math.random() * 100}%`;
-    petal.style.animationDuration = `${5.4 + Math.random() * 4.8}s`;
-    petal.style.animationDelay = `${Math.random() * 1.4}s`;
-    petal.style.setProperty("--drift", `${-90 + Math.random() * 180}px`);
-    petal.style.setProperty("--spin", `${240 + Math.random() * 520}deg`);
-    petal.style.transform = `scale(${.65 + Math.random() * .8})`;
-
-    petals.appendChild(petal);
-    setTimeout(() => petal.remove(), 11500);
+  for(let i=0;i<38;i++){
+    const p=document.createElement("span");
+    p.className="petal"+(i%7===0?" leaf":"");
+    p.style.left=`${Math.random()*100}%`;
+    p.style.animationDuration=`${5.5+Math.random()*4.5}s`;
+    p.style.animationDelay=`${Math.random()*1.5}s`;
+    p.style.setProperty("--drift",`${-100+Math.random()*200}px`);
+    p.style.setProperty("--spin",`${240+Math.random()*520}deg`);
+    p.style.transform=`scale(${.65+Math.random()*.8})`;
+    petals.appendChild(p);
+    setTimeout(()=>p.remove(),11500);
   }
 }
 
-seal.addEventListener("click", () => {
-  if(opened) return;
-  opened = true;
-  waxSound();
-  if(navigator.vibrate) navigator.vibrate([30,20,40]);
+seal.addEventListener("click",()=>{
+  if(opened)return;
+  opened=true;
+  sound();
+  if(navigator.vibrate)navigator.vibrate([30,20,40]);
   scene.classList.add("open");
   createPetals();
 });
 
-enterSite.addEventListener("click", () => {
-  intro.style.transition = "opacity .9s ease, transform .9s ease";
-  intro.style.opacity = "0";
-  intro.style.transform = "scale(1.03)";
-
-  setTimeout(() => {
-    intro.style.display = "none";
-    weddingSite.classList.add("show");
-    window.scrollTo({top:0,behavior:"instant"});
-    observeReveal();
-  }, 900);
+enter.addEventListener("click",()=>{
+  intro.style.transition="opacity .9s ease,transform .9s ease";
+  intro.style.opacity="0";
+  intro.style.transform="scale(1.03)";
+  setTimeout(()=>{
+    intro.style.display="none";
+    site.classList.add("show");
+    window.scrollTo(0,0);
+    observe();
+  },900);
 });
 
-function observeReveal(){
-  const items = document.querySelectorAll(".reveal");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+function observe(){
+  const items=document.querySelectorAll(".reveal");
+  const ob=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add("visible");
+        ob.unobserve(e.target);
       }
     });
-  }, {threshold:.18});
-
-  items.forEach(item => observer.observe(item));
+  },{threshold:.16});
+  items.forEach(i=>ob.observe(i));
 }
