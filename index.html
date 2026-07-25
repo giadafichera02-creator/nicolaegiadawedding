@@ -165,18 +165,25 @@ button{touch-action:manipulation}
 
 .photo-seal-hotspot{
   position:absolute;
-  z-index:6;
+  z-index:20;
+
+  /* posizione esatta sul sigillo */
   left:50%;
-  top:54%;
-  width:clamp(86px,10vw,120px);
-  height:clamp(86px,10vw,120px);
+  top:46.8%;
+
+  width:108px;
+  height:108px;
+
   transform:translate(-50%,-50%);
-  border:0;
+
+  border:none;
   border-radius:50%;
+
   background:transparent;
   cursor:pointer;
-  box-shadow:0 0 0 0 rgba(255,255,255,0);
-  transition:transform .25s ease,box-shadow .25s ease;
+
+  pointer-events:auto;
+}
 }
 
 .photo-seal-hotspot:hover{
@@ -314,10 +321,12 @@ button{touch-action:manipulation}
   text-transform:uppercase;
 }
 
-@media(max-width:680px){
-  .photo-envelope-image{
-    object-position:center center;
-  }
+.photo-seal-hotspot{
+    left:50%;
+    top:46.5%;
+    width:84px;
+    height:84px;
+}
 
   .photo-seal-hotspot{
     top:53.2%;
