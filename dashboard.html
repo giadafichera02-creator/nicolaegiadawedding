@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Dashboard privata — Nicola & Giada</title>
+  <style>
+    :root{
+      --sage:#71806a;
+      --sage-dark:#4d5a48;
+      --sage-soft:#dfe5dc;
+      --ivory:#f8f3e9;
+      --paper:#fffdf8;
+      --gold:#b59655;
+      --ink:#39372f;
+      --muted:#777167;
+      --danger:#934f4f;
+      --shadow:0 18px 50px rgba(65,58,43,.12);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 8% 5%,rgba(255,255,255,.8),transparent 28%),
+        linear-gradient(135deg,#eee8dc,#d9d1c1);
+      min-height:100vh;
+    }
+    button,input,select{font:inherit}
+    .hidden{display:none!important}
+    .login{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+    .login-card{
+      width:min(100%,430px);
+      padding:42px 34px;
+      text-align:center;
+      background:rgba(255,253,248,.95);
+      border:1px solid rgba(181,150,85,.35);
+      box-shadow:var(--shadow);
+    }
+    .monogram{
+      color:var(--sage-dark);
+      font-size:42px;
+      letter-spacing:.13em;
+    }
+    .eyebrow{
+      margin:8px 0;
+      color:var(--gold);
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    h1,h2,h3{font-weight:500}
+    h1{margin:12px 0 8px;font-size:34px;color:var(--sage-dark)}
+    .login-card p{color:var(--muted);line-height:1.6}
+    .field{
+      width:100%;
+      margin-top:18px;
+      padding:13px 14px;
+      border:1px solid rgba(77,90,72,.25);
+      background:#fff;
+      outline:none;
+    }
+    .field:focus{border-color:var(--sage)}
+    .btn{
+      border:0;
+      padding:12px 18px;
+      cursor:pointer;
+      background:var(--sage);
+      color:#fff;
+      letter-spacing:.06em;
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);filter:brightness(.97)}
+    .btn.secondary{background:#eee8dc;color:var(--sage-dark)}
+    .btn.danger{background:var(--danger)}
+    .login-card .btn{width:100%;margin-top:12px}
+    .error{color:var(--danger);font-size:13px;min-height:18px}
+    .app{
+      min-height:100vh;
+      padding:24px;
+    }
+    .shell{
+      width:min(1400px,100%);
+      margin:0 auto;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:22px 26px;
+      background:rgba(255,253,248,.95);
+      border:1px solid rgba(181,150,85,.28);
+      box-shadow:var(--shadow);
+    }
+    .brand strong{
+      display:block;
+      color:var(--sage-dark);
+      font-size:28px;
+      font-weight:500;
+    }
+    .brand span{
+      color:var(--gold);
+      font-size:10px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .header-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .import-panel{
+      margin-top:18px;
+      padding:20px 24px;
+      background:rgba(255,253,248,.95);
+      border:1px solid rgba(181,150,85,.28);
+    }
+    .import-grid{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:18px;
+      align-items:center;
+    }
+    .import-panel p{margin:4px 0;color:var(--muted);line-height:1.5}
+    .file-label{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 16px;
+      background:var(--sage);
+      color:#fff;
+      cursor:pointer;
+    }
+    #csvFile{display:none}
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:14px;
+      margin:18px 0;
+    }
+    .stat{
+      padding:20px;
+      background:rgba(255,253,248,.95);
+      border:1px solid rgba(181,150,85,.25);
+      box-shadow:0 10px 28px rgba(65,58,43,.07);
+    }
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-size:10px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .stat strong{
+      display:block;
+      margin-top:8px;
+      color:var(--sage-dark);
+      font-size:34px;
+      font-weight:500;
+    }
+    .toolbar{
+      display:grid;
+      grid-template-columns:1fr 220px 220px;
+      gap:12px;
+      margin-bottom:14px;
+    }
+    .toolbar input,.toolbar select{
+      padding:12px 13px;
+      border:1px solid rgba(77,90,72,.22);
+      background:rgba(255,253,248,.95);
+    }
+    .table-wrap{
+      overflow:auto;
+      background:rgba(255,253,248,.97);
+      border:1px solid rgba(181,150,85,.28);
+      box-shadow:var(--shadow);
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:920px;
+    }
+    th,td{
+      padding:14px 15px;
+      text-align:left;
+      border-bottom:1px solid rgba(77,90,72,.12);
+      vertical-align:top;
+    }
+    th{
+      position:sticky;
+      top:0;
+      z-index:2;
+      background:#efe9dd;
+      color:var(--sage-dark);
+      font-size:10px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    td{font-family:Arial,sans-serif;font-size:14px}
+    .badge{
+      display:inline-block;
+      padding:5px 9px;
+      border-radius:999px;
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .yes{background:#e3ece0;color:#3f653c}
+    .no{background:#f2dfdf;color:#874545}
+    .maybe{background:#eee7d4;color:#80692d}
+    .allergy{color:var(--danger);font-weight:700}
+    .empty{
+      padding:56px 20px;
+      text-align:center;
+      color:var(--muted);
+    }
+    .footer-note{
+      margin:16px 0 4px;
+      color:#6f695f;
+      font-size:12px;
+      line-height:1.55;
+    }
+    @media(max-width:1000px){
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .toolbar{grid-template-columns:1fr}
+    }
+    @media(max-width:650px){
+      .app{padding:10px}
+      header{align-items:flex-start;flex-direction:column;padding:18px}
+      .stats{grid-template-columns:1fr 1fr}
+      .import-grid{grid-template-columns:1fr}
+      .stat strong{font-size:29px}
+    }
+  </style>
+</head>
+<body>
+  <section class="login" id="loginView">
+    <div class="login-card">
+      <div class="monogram">N & G</div>
+      <div class="eyebrow">Area riservata</div>
+      <h1>Wedding Dashboard</h1>
+      <p>Inserisci la password scelta per accedere alla gestione delle conferme.</p>
+      <input class="field" id="passwordInput" type="password" placeholder="Password" autocomplete="current-password">
+      <button class="btn" id="loginButton">Accedi</button>
+      <div class="error" id="loginError"></div>
+    </div>
+  </section>
+
+  <main class="app hidden" id="appView">
+    <div class="shell">
+      <header>
+        <div class="brand">
+          <span>Area privata</span>
+          <strong>Nicola & Giada</strong>
+        </div>
+        <div class="header-actions">
+          <button class="btn secondary" id="downloadCsv">Esporta dati filtrati</button>
+          <button class="btn danger" id="clearData">Cancella dati locali</button>
+          <button class="btn secondary" id="logout">Esci</button>
+        </div>
+      </header>
+
+      <section class="import-panel">
+        <div class="import-grid">
+          <div>
+            <h2 style="margin:0;color:var(--sage-dark)">Importa le risposte Formspree</h2>
+            <p>Da Formspree apri <b>Submissions → Export</b>, scarica il CSV e caricalo qui. Il file viene letto soltanto nel tuo browser e non viene inviato online.</p>
+            <p id="lastImport"><b>Nessun file ancora importato.</b></p>
+          </div>
+          <label class="file-label">
+            Carica CSV
+            <input id="csvFile" type="file" accept=".csv,text/csv">
+          </label>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="stat"><span>Risposte ricevute</span><strong id="statResponses">0</strong></div>
+        <div class="stat"><span>Persone confermate</span><strong id="statPeople">0</strong></div>
+        <div class="stat"><span>Risposte positive</span><strong id="statYes">0</strong></div>
+        <div class="stat"><span>Assenti</span><strong id="statNo">0</strong></div>
+        <div class="stat"><span>Con allergie</span><strong id="statAllergies">0</strong></div>
+      </section>
+
+      <section class="toolbar">
+        <input id="searchInput" type="search" placeholder="Cerca per nome, allergia o messaggio…">
+        <select id="presenceFilter">
+          <option value="">Tutte le risposte</option>
+          <option value="yes">Solo presenti</option>
+          <option value="no">Solo assenti</option>
+          <option value="maybe">Da verificare</option>
+        </select>
+        <select id="allergyFilter">
+          <option value="">Tutte le esigenze alimentari</option>
+          <option value="with">Con allergie/intolleranze</option>
+          <option value="without">Senza allergie indicate</option>
+        </select>
+      </section>
+
+      <section class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Nome</th>
+              <th>Presenza</th>
+              <th>Persone</th>
+              <th>Allergie / esigenze</th>
+              <th>Messaggio</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div class="empty" id="emptyState">Carica il CSV esportato da Formspree per vedere le risposte.</div>
+      </section>
+
+      <p class="footer-note">
+        Questa prima versione conserva i dati solo nel browser del dispositivo utilizzato. La password integrata è una protezione di base, non un sistema di sicurezza adatto a pubblicare dati sensibili su una pagina accessibile a chiunque.
+      </p>
+    </div>
+  </main>
+
+<script>
+/*
+  CAMBIA QUI LA PASSWORD PRIMA DI CARICARE dashboard.html SU GITHUB.
+  Nota: in un sito statico questa password è soltanto una protezione di base.
+*/
+const DASHBOARD_PASSWORD = "GiadaNicola2027";
+
+let allRows = [];
+let filteredRows = [];
+
+const loginView = document.getElementById("loginView");
+const appView = document.getElementById("appView");
+const passwordInput = document.getElementById("passwordInput");
+const loginError = document.getElementById("loginError");
+
+function unlock(){
+  if(passwordInput.value === DASHBOARD_PASSWORD){
+    sessionStorage.setItem("ng-dashboard-auth","yes");
+    loginView.classList.add("hidden");
+    appView.classList.remove("hidden");
+    loginError.textContent = "";
+    loadSavedData();
+  }else{
+    loginError.textContent = "Password non corretta.";
+  }
+}
+document.getElementById("loginButton").addEventListener("click",unlock);
+passwordInput.addEventListener("keydown",e=>{if(e.key==="Enter") unlock()});
+document.getElementById("logout").addEventListener("click",()=>{
+  sessionStorage.removeItem("ng-dashboard-auth");
+  location.reload();
+});
+if(sessionStorage.getItem("ng-dashboard-auth")==="yes"){
+  loginView.classList.add("hidden");
+  appView.classList.remove("hidden");
+  loadSavedData();
+}
+
+function parseCSV(text){
+  const rows=[];
+  let row=[],cell="",quoted=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i],next=text[i+1];
+    if(c === '"' && quoted && next === '"'){cell+='"';i++}
+    else if(c === '"'){quoted=!quoted}
+    else if(c === "," && !quoted){row.push(cell);cell=""}
+    else if((c === "\n" || c === "\r") && !quoted){
+      if(c === "\r" && next === "\n") i++;
+      row.push(cell);cell="";
+      if(row.some(v=>v.trim()!=="")) rows.push(row);
+      row=[];
+    }else{cell+=c}
+  }
+  if(cell.length || row.length){row.push(cell);rows.push(row)}
+  return rows;
+}
+
+function normalizeHeader(value){
+  return String(value||"").trim().toLowerCase().replace(/^_+/,"");
+}
+function getField(obj,names){
+  for(const name of names){
+    const key=Object.keys(obj).find(k=>normalizeHeader(k)===name);
+    if(key && obj[key]!=null) return String(obj[key]).trim();
+  }
+  return "";
+}
+function normalizePresence(value){
+  const v=(value||"").toLowerCase();
+  if(v.includes("sì")||v.includes("si,")||v.includes("presente")||v.includes("grande piacere")||v==="yes") return "yes";
+  if(v.includes("no")||v.includes("non potr")) return "no";
+  return "maybe";
+}
+function hasAllergy(value){
+  const v=(value||"").trim().toLowerCase();
+  if(!v) return false;
+  return !["nessuna","nessuno","no","n/a","-","null"].includes(v);
+}
+function mapRows(matrix){
+  if(matrix.length<2) return [];
+  const headers=matrix[0].map(h=>h.trim());
+  return matrix.slice(1).map(values=>{
+    const obj={};
+    headers.forEach((h,i)=>obj[h]=values[i]||"");
+    const presenceRaw=getField(obj,["presenza","attendance","partecipazione"]);
+    const peopleRaw=getField(obj,["persone","guests","partecipanti","numero persone"]);
+    return {
+      date:getField(obj,["date","data","submitted at","created at"]),
+      name:getField(obj,["nome","name","nome e cognome"]),
+      presenceRaw,
+      presence:normalizePresence(presenceRaw),
+      people:Math.max(0,parseInt(peopleRaw,10)||0),
+      allergies:getField(obj,["allergie","allergia","intolleranze","dietary requirements"]),
+      message:getField(obj,["messaggio","message","note"])
+    };
+  }).filter(r=>r.name||r.presenceRaw||r.allergies||r.message);
+}
+
+document.getElementById("csvFile").addEventListener("change",async e=>{
+  const file=e.target.files[0];
+  if(!file) return;
+  const text=await file.text();
+  allRows=mapRows(parseCSV(text));
+  localStorage.setItem("ng-dashboard-data",JSON.stringify(allRows));
+  localStorage.setItem("ng-dashboard-import",new Date().toLocaleString("it-IT"));
+  render();
+  updateImportLabel();
+  e.target.value="";
+});
+
+function loadSavedData(){
+  try{allRows=JSON.parse(localStorage.getItem("ng-dashboard-data")||"[]")}catch{allRows=[]}
+  updateImportLabel();
+  render();
+}
+function updateImportLabel(){
+  const imported=localStorage.getItem("ng-dashboard-import");
+  document.getElementById("lastImport").innerHTML=imported
+    ? "<b>Ultimo aggiornamento:</b> "+escapeHtml(imported)
+    : "<b>Nessun file ancora importato.</b>";
+}
+
+function escapeHtml(v){
+  return String(v||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+function presenceLabel(row){
+  if(row.presence==="yes") return '<span class="badge yes">Presente</span>';
+  if(row.presence==="no") return '<span class="badge no">Assente</span>';
+  return '<span class="badge maybe">Da verificare</span>';
+}
+function applyFilters(){
+  const term=document.getElementById("searchInput").value.trim().toLowerCase();
+  const presence=document.getElementById("presenceFilter").value;
+  const allergy=document.getElementById("allergyFilter").value;
+  filteredRows=allRows.filter(r=>{
+    const hay=[r.name,r.allergies,r.message,r.presenceRaw].join(" ").toLowerCase();
+    if(term && !hay.includes(term)) return false;
+    if(presence && r.presence!==presence) return false;
+    if(allergy==="with" && !hasAllergy(r.allergies)) return false;
+    if(allergy==="without" && hasAllergy(r.allergies)) return false;
+    return true;
+  });
+}
+function render(){
+  applyFilters();
+  const body=document.getElementById("tableBody");
+  body.innerHTML=filteredRows.map(r=>`
+    <tr>
+      <td>${escapeHtml(r.date||"—")}</td>
+      <td><b>${escapeHtml(r.name||"Senza nome")}</b></td>
+      <td>${presenceLabel(r)}</td>
+      <td>${r.presence==="yes" ? escapeHtml(r.people||1) : "—"}</td>
+      <td class="${hasAllergy(r.allergies)?"allergy":""}">${escapeHtml(r.allergies||"Nessuna indicata")}</td>
+      <td>${escapeHtml(r.message||"—")}</td>
+    </tr>`).join("");
+  document.getElementById("emptyState").classList.toggle("hidden",filteredRows.length>0);
+  document.getElementById("statResponses").textContent=allRows.length;
+  document.getElementById("statYes").textContent=allRows.filter(r=>r.presence==="yes").length;
+  document.getElementById("statNo").textContent=allRows.filter(r=>r.presence==="no").length;
+  document.getElementById("statPeople").textContent=allRows
+    .filter(r=>r.presence==="yes")
+    .reduce((sum,r)=>sum+(r.people||1),0);
+  document.getElementById("statAllergies").textContent=allRows.filter(r=>hasAllergy(r.allergies)).length;
+}
+["searchInput","presenceFilter","allergyFilter"].forEach(id=>{
+  document.getElementById(id).addEventListener("input",render);
+  document.getElementById(id).addEventListener("change",render);
+});
+
+document.getElementById("clearData").addEventListener("click",()=>{
+  if(!confirm("Vuoi cancellare dal browser tutti i dati importati?")) return;
+  localStorage.removeItem("ng-dashboard-data");
+  localStorage.removeItem("ng-dashboard-import");
+  allRows=[];
+  render();
+  updateImportLabel();
+});
+
+function csvEscape(value){
+  const s=String(value??"");
+  return /[",\n\r]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s;
+}
+document.getElementById("downloadCsv").addEventListener("click",()=>{
+  applyFilters();
+  const rows=[
+    ["Data","Nome","Presenza","Persone","Allergie","Messaggio"],
+    ...filteredRows.map(r=>[
+      r.date,r.name,
+      r.presence==="yes"?"Presente":r.presence==="no"?"Assente":"Da verificare",
+      r.people,r.allergies,r.message
+    ])
+  ];
+  const csv="\uFEFF"+rows.map(row=>row.map(csvEscape).join(",")).join("\r\n");
+  const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;
+  a.download="rsvp-nicola-giada.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+});
+</script>
+</body>
+</html>
