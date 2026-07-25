@@ -1,0 +1,12 @@
+VERSIONE DEFINITIVA V1 — NICOLA & GIADA
+
+Questa cartella contiene:
+- index.html (HTML + CSS + JavaScript in un unico file)
+- 7 fotografie
+
+Per GitHub:
+1. Lascia le fotografie nella cartella principale del repository.
+2. Elimina il vecchio index.html.
+3. Carica direttamente questo index.html con Add file > Upload files.
+4. Non incollare il contenuto nel README e non aprire il file con Word.
+5. Attendi il deploy verde di Vercel e apri il sito in incognito.
