@@ -1,38 +1,30 @@
-# The Wedding Book V2 — Nicola ♡ Giada
+# The Wedding Book V4 — Nicola ♡ Giada
 
-## Novità
-- busta e carta più realistiche;
-- fotografie demo visibili online;
-- pagina location con logo provvisorio;
-- modulo RSVP;
-- campi per accompagnatori, allergie, intolleranze ed esigenze alimentari;
-- effetto sfoglio più profondo.
+Versione con le fotografie reali inserite.
 
-## Ricevere davvero gli RSVP
-Apri `config.js` e sostituisci:
+## Aprire il progetto
+Apri `index.html` oppure pubblica l'intera cartella su Vercel/GitHub Pages.
 
-`INSERISCI_LA_TUA_EMAIL`
+## Collegare Google Forms
+1. Crea il modulo Google.
+2. Premi **Invia**.
+3. Seleziona l'icona del collegamento.
+4. Copia il link.
+5. Apri `config.js`.
+6. Incolla il link qui:
 
-con l'indirizzo email su cui vuoi ricevere le risposte.
-
-Il modulo usa FormSubmit. Al primo invio riceverai un messaggio di attivazione da confermare.
-
-## Inserire le vostre foto
-Crea una cartella `assets/foto` e inserisci le immagini, per esempio:
-
-- `prima-foto.jpg`
-- `primo-incontro.jpg`
-- `proposta.jpg`
-
-Poi in `index.html` sostituisci gli indirizzi Unsplash con:
-
-`assets/foto/prima-foto.jpg`
+```js
+googleFormUrl: "INCOLLA_QUI_IL_LINK"
+```
 
 ## Modificare la location
-Nel file `config.js` cambia:
+Nel file `config.js` aggiorna:
+- `weddingDate`
 - `venueName`
 - `venueAddress`
 - `mapUrl`
-- `weddingDate`
 
-Sostituisci `assets/villa-logo.svg` con il logo reale quando avrete scelto la location.
+Sostituisci `assets/villa-logo.svg` con il logo reale della location.
+
+## Fotografie
+Le foto sono salvate in `assets/photos` e ottimizzate per il web.

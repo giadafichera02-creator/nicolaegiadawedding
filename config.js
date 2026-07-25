@@ -1,7 +1,8 @@
 window.WEDDING_CONFIG = {
-  destinationEmail: "INSERISCI_LA_TUA_EMAIL",
   weddingDate: "Settembre 2027",
-  venueName: "Villa delle Magnolie",
+  venueName: "Villa da definire",
   venueAddress: "Indirizzo da definire",
-  mapUrl: "#"
+  mapUrl: "",
+  googleFormUrl: "",
+  rsvpDeadline: "Data da definire"
 };
