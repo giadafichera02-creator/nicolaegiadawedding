@@ -1,103 +1,134 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#f5efe6">
-  <title>Nicola & Giada</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101010" />
+  <title>Nicola ♡ Giada — The Wedding Book</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main id="intro" class="intro">
-    <div class="paper-noise"></div>
-    <div id="petals" class="petals" aria-hidden="true"></div>
+  <main class="experience">
+    <section class="cinematic-intro" id="intro">
+      <div class="intro-light"></div>
+      <div class="intro-content">
+        <p class="monogram">N <span>♡</span> G</p>
+        <p class="intro-line" id="introLine">Ogni storia ha un inizio.</p>
+        <button class="sound-toggle" id="soundToggle" type="button">Attiva il vento</button>
+      </div>
+    </section>
 
-    <p class="intro-kicker">Hai ricevuto un invito speciale</p>
-
-    <section id="scene" class="scene">
-      <div class="botanical botanical-left">❦</div>
-      <div class="botanical botanical-right">❧</div>
-
-      <div class="envelope">
-        <div class="letter">
-          <div class="letter-frame"></div>
-          <div class="letter-content">
-            <p class="letter-small">Sei invitato al nostro</p>
-            <h1>Matrimonio</h1>
-            <div class="ornament">❦</div>
-            <p class="letter-names">Nicola &amp; Giada</p>
-            <button id="enterBtn" class="enter-btn">Scopri di più</button>
-          </div>
+    <section class="invitation-stage is-hidden" id="invitationStage">
+      <div class="envelope-scene" id="envelopeScene">
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+          <div class="letter-preview"><span>N ♡ G</span></div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-front"></div>
+          <button class="wax-seal" id="waxSeal" type="button" aria-label="Apri la busta">N ♡ G</button>
         </div>
-
-        <div class="env-base"></div>
-        <div class="env-left"></div>
-        <div class="env-right"></div>
-        <div class="env-front"></div>
-        <div class="flap-back"></div>
-        <div class="flap"></div>
-
-        <button id="sealBtn" class="seal" aria-label="Premi il sigillo per aprire">
-          <span>N&nbsp;&nbsp;♡&nbsp;&nbsp;G</span>
-        </button>
+        <p class="tap-hint">Tocca il sigillo</p>
       </div>
 
-      <p class="tap">Premi il sigillo per aprire</p>
+      <article class="invitation-letter" id="invitationLetter">
+        <div class="letter-border">
+          <p class="letter-monogram">N ♡ G</p>
+          <p class="letter-kicker">The Wedding Book</p>
+          <h1>Ogni storia d’amore ha un inizio.</h1>
+          <p>Ci sono incontri che cambiano una giornata.<br>Altri che cambiano una vita.</p>
+          <p>La nostra ci ha portati fino a qui.<br>E ora desideriamo condividere con voi il giorno più importante del nostro cammino.</p>
+          <button class="primary-button" id="openBook" type="button">Apri il nostro invito</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="book-stage is-hidden" id="bookStage">
+      <div class="book-shell">
+        <div class="book">
+          <article class="book-page current">
+            <div class="page-content cover-page">
+              <p class="chapter-number">Nicola ♡ Giada</p>
+              <h2>Benvenuti nella nostra storia.</h2>
+              <p class="small-note">Sfoglia il libro per continuare</p>
+            </div>
+          </article>
+
+          <article class="book-page">
+            <div class="page-content">
+              <p class="chapter-number">Capitolo I</p>
+              <h2>Senza alcun preavviso</h2>
+              <blockquote>Un messaggio ricevuto senza alcun preavviso.<br>Un sorriso strappato.<br>Un momento inaspettato.</blockquote>
+              <div class="photo-placeholder">La vostra prima foto</div>
+            </div>
+          </article>
+
+          <article class="book-page">
+            <div class="page-content">
+              <p class="chapter-number">Capitolo II</p>
+              <h2>Il primo incontro</h2>
+              <blockquote>Una sera, il primo incontro,<br>un giro in moto un po’ pazzo.</blockquote>
+            </div>
+          </article>
+
+          <article class="book-page">
+            <div class="page-content">
+              <p class="chapter-number">Capitolo III</p>
+              <h2>Tra risate e vento sul viso</h2>
+              <blockquote>Quel che sembrava soltanto un gioco,<br>ha acceso piano un nuovo fuoco.</blockquote>
+            </div>
+          </article>
+
+          <article class="book-page">
+            <div class="page-content">
+              <p class="chapter-number">Capitolo IV</p>
+              <h2>Insieme</h2>
+              <blockquote>Mille risate, pianti e difficoltà.<br><br>Sei rimasto al mio fianco come un guerriero.</blockquote>
+            </div>
+          </article>
+
+          <article class="book-page">
+            <div class="page-content">
+              <p class="chapter-number">Capitolo V</p>
+              <h2>Quel giorno</h2>
+              <div class="photo-placeholder">La foto della proposta</div>
+              <p>Ci sono giorni che rimangono impressi nella memoria.<br>E poi ci sono giorni che cambiano il resto della vita.</p>
+            </div>
+          </article>
+
+          <article class="book-page">
+            <div class="page-content">
+              <p class="chapter-number">Il prossimo capitolo</p>
+              <h2>Il nostro matrimonio</h2>
+              <div class="wedding-date"><span>SETTEMBRE</span><strong>2027</strong></div>
+              <div class="details-grid">
+                <div><span>Data</span><strong>Da definire</strong></div>
+                <div><span>Location</span><strong>Da definire</strong></div>
+                <div><span>Cerimonia</span><strong>Da definire</strong></div>
+                <div><span>Ricevimento</span><strong>Da definire</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-page">
+            <div class="page-content final-page">
+              <p class="chapter-number">Epilogo</p>
+              <p class="final-monogram">N ♡ G</p>
+              <h2>Grazie per aver sfogliato la nostra storia.</h2>
+              <p>Il prossimo capitolo vorremmo viverlo insieme a voi.</p>
+              <button class="secondary-button" id="restart" type="button">Ricomincia</button>
+            </div>
+          </article>
+
+          <button class="page-corner" id="nextPage" type="button">Gira pagina</button>
+          <button class="page-back" id="prevPage" type="button">‹</button>
+        </div>
+        <div class="book-progress"><span id="pageIndicator">1 / 8</span></div>
+      </div>
     </section>
   </main>
-
-  <section id="site" class="site">
-    <section class="proposal">
-      <img src="assets/proposta.jpeg" alt="Nicola e Giada nel giorno della proposta">
-      <div class="proposal-overlay"></div>
-      <div class="proposal-copy reveal">
-        <p class="section-kicker">La nostra promessa</p>
-        <h2>Nicola &amp; Giada</h2>
-        <p>Ci sono momenti che cambiano una vita. Questo è stato il nostro.</p>
-      </div>
-    </section>
-
-    <section class="story section">
-      <p class="section-kicker reveal">La nostra storia</p>
-      <h3 class="reveal">Due strade, un solo percorso</h3>
-      <p class="lead reveal">Anni di ricordi, viaggi, risate e piccoli momenti che ci hanno portati fin qui.</p>
-
-      <div class="story-grid">
-        <figure class="photo-card reveal"><img src="assets/foto10.jpeg" alt=""><figcaption>Gli inizi</figcaption></figure>
-        <figure class="photo-card reveal"><img src="assets/foto02.jpeg" alt=""><figcaption>Insieme, ovunque</figcaption></figure>
-        <figure class="photo-card reveal"><img src="assets/foto06.jpeg" alt=""><figcaption>Le nostre avventure</figcaption></figure>
-        <figure class="photo-card reveal"><img src="assets/foto09.jpeg" alt=""><figcaption>Ogni stagione, noi</figcaption></figure>
-        <figure class="photo-card reveal"><img src="assets/foto08.jpeg" alt=""><figcaption>Il nostro oggi</figcaption></figure>
-        <figure class="photo-card reveal"><img src="assets/foto01.jpeg" alt=""><figcaption>Verso il per sempre</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="details section alt">
-      <p class="section-kicker reveal">Il nostro giorno</p>
-      <h3 class="reveal">Festeggiate con noi</h3>
-      <div class="detail-grid">
-        <article class="detail-card reveal"><span>01</span><h4>Quando</h4><p>Settembre 2027</p></article>
-        <article class="detail-card reveal"><span>02</span><h4>Cerimonia</h4><p>Luogo da definire</p></article>
-        <article class="detail-card reveal"><span>03</span><h4>Ricevimento</h4><p>Location da definire</p></article>
-      </div>
-    </section>
-
-    <section class="rsvp section">
-      <p class="section-kicker reveal">Conferma presenza</p>
-      <h3 class="reveal">Ci sarete?</h3>
-      <p class="lead reveal">Non vediamo l'ora di condividere con voi il giorno più bello della nostra vita.</p>
-      <a class="cta reveal" href="https://wa.me/390000000000?text=Ciao%20Nicola%20e%20Giada,%20confermo%20la%20mia%20presenza!">Conferma su WhatsApp</a>
-    </section>
-
-    <footer>
-      <span>Nicola &amp; Giada</span>
-      <p>Settembre 2027</p>
-    </footer>
-  </section>
-
   <script src="script.js"></script>
 </body>
 </html>
