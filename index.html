@@ -226,7 +226,8 @@ button{touch-action:manipulation}
   text-transform:uppercase;
 }
 
-.invitation{
+.invitation{position:relative;
+z-index:5;
   width:min(92vw,700px);
   opacity:0;
   transform:translateY(40px) scale(.97);
@@ -1421,9 +1422,10 @@ document.getElementById("seal").addEventListener("click", () => {
   envelope.classList.add("open");
 
   window.setTimeout(() => {
-    envelopeWrap.style.opacity = "0";
-    envelopeWrap.style.transform = "translateY(28px) scale(.97)";
-  }, 1050);
+  envelopeWrap.style.opacity = "0";
+  envelopeWrap.style.transform = "translateY(28px) scale(.97)";
+  envelopeWrap.style.pointerEvents = "none";
+}, 1050);
 
   window.setTimeout(() => {
     invitation.classList.add("show");
