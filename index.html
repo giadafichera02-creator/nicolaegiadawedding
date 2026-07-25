@@ -1,134 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#101010" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#11110f">
   <title>Nicola ♡ Giada — The Wedding Book</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="experience">
-    <section class="cinematic-intro" id="intro">
-      <div class="intro-light"></div>
-      <div class="intro-content">
-        <p class="monogram">N <span>♡</span> G</p>
-        <p class="intro-line" id="introLine">Ogni storia ha un inizio.</p>
-        <button class="sound-toggle" id="soundToggle" type="button">Attiva il vento</button>
+<main>
+  <section class="intro" id="intro">
+    <div class="light-sweep"></div>
+    <div class="intro-copy">
+      <div class="monogram">N <span>♡</span> G</div>
+      <p id="introLine">Ogni storia ha un inizio.</p>
+      <button id="soundToggle" class="ghost">Attiva il vento</button>
+    </div>
+  </section>
+
+  <section class="invitation hidden" id="invitation">
+    <div class="scene">
+      <div class="sprig left"></div>
+      <div class="sprig right"></div>
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="insert-card"><span>N ♡ G</span></div>
+        <div class="env-flap"></div>
+        <div class="env-front"></div>
+        <button class="seal" id="seal" aria-label="Apri la busta"><span>N ♡ G</span></button>
       </div>
-    </section>
+      <p class="hint">Tocca il sigillo</p>
+    </div>
 
-    <section class="invitation-stage is-hidden" id="invitationStage">
-      <div class="envelope-scene" id="envelopeScene">
-        <div class="envelope" id="envelope">
-          <div class="envelope-back"></div>
-          <div class="letter-preview"><span>N ♡ G</span></div>
-          <div class="envelope-flap"></div>
-          <div class="envelope-front"></div>
-          <button class="wax-seal" id="waxSeal" type="button" aria-label="Apri la busta">N ♡ G</button>
-        </div>
-        <p class="tap-hint">Tocca il sigillo</p>
+    <article class="letter" id="letter" aria-hidden="true">
+      <div class="letter-inner">
+        <p class="tiny">THE WEDDING BOOK</p>
+        <div class="letter-mark">N ♡ G</div>
+        <h1>Ogni storia d’amore ha un inizio.</h1>
+        <p>Ci sono incontri che cambiano una giornata.<br>Altri che cambiano una vita.</p>
+        <p>La nostra ci ha portati fino a qui, e ora desideriamo condividere con voi il giorno più importante del nostro cammino.</p>
+        <button class="primary" id="openBook">Apri il nostro invito</button>
       </div>
+    </article>
+  </section>
 
-      <article class="invitation-letter" id="invitationLetter">
-        <div class="letter-border">
-          <p class="letter-monogram">N ♡ G</p>
-          <p class="letter-kicker">The Wedding Book</p>
-          <h1>Ogni storia d’amore ha un inizio.</h1>
-          <p>Ci sono incontri che cambiano una giornata.<br>Altri che cambiano una vita.</p>
-          <p>La nostra ci ha portati fino a qui.<br>E ora desideriamo condividere con voi il giorno più importante del nostro cammino.</p>
-          <button class="primary-button" id="openBook" type="button">Apri il nostro invito</button>
-        </div>
-      </article>
-    </section>
+  <section class="book-stage hidden" id="bookStage">
+    <div class="book-wrap">
+      <div class="book" id="book">
+        <div class="page-stack"></div>
 
-    <section class="book-stage is-hidden" id="bookStage">
-      <div class="book-shell">
-        <div class="book">
-          <article class="book-page current">
-            <div class="page-content cover-page">
-              <p class="chapter-number">Nicola ♡ Giada</p>
-              <h2>Benvenuti nella nostra storia.</h2>
-              <p class="small-note">Sfoglia il libro per continuare</p>
+        <article class="page current">
+          <div class="page-inner cover">
+            <p class="eyebrow">Nicola ♡ Giada</p>
+            <h2>Benvenuti nella nostra storia.</h2>
+            <div class="flourish">❦</div>
+            <p class="muted">Sfoglia il libro per continuare</p>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="page-inner">
+            <p class="eyebrow">Capitolo I</p>
+            <h2>Senza alcun preavviso</h2>
+            <blockquote>Un messaggio ricevuto senza alcun preavviso.<br>Un sorriso strappato.<br>Un momento inaspettato.</blockquote>
+            <figure class="story-photo">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=85" alt="Coppia in un momento romantico" loading="lazy">
+              <figcaption>Qui inseriremo una vostra fotografia.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="page-inner">
+            <p class="eyebrow">Capitolo II</p>
+            <h2>Il primo incontro</h2>
+            <blockquote>Una sera, il primo incontro,<br>un giro in moto un po’ pazzo.</blockquote>
+            <figure class="story-photo portrait">
+              <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1400&q=85" alt="Coppia che cammina insieme" loading="lazy">
+              <figcaption>Foto provvisoria: verrà sostituita con la vostra.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="page-inner air">
+            <p class="eyebrow">Capitolo III</p>
+            <h2>Tra risate e vento sul viso</h2>
+            <blockquote>Quel che sembrava soltanto un gioco,<br>ha acceso piano un nuovo fuoco.</blockquote>
+            <div class="wind-ribbons"><i></i><i></i><i></i></div>
+            <p class="muted">Da quel momento, ogni strada ha iniziato a portarci nella stessa direzione.</p>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="page-inner">
+            <p class="eyebrow">Capitolo IV</p>
+            <h2>Insieme</h2>
+            <blockquote>Mille risate, pianti e difficoltà.<br><br>Sei rimasto al mio fianco come un guerriero.</blockquote>
+            <div class="divider"></div>
+            <p class="muted">Anche nei momenti più difficili, abbiamo continuato a scegliere noi.</p>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="page-inner">
+            <p class="eyebrow">Capitolo V</p>
+            <h2>Quel giorno</h2>
+            <figure class="story-photo proposal">
+              <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1400&q=85" alt="Anello di fidanzamento" loading="lazy">
+              <figcaption>Qui inseriremo la foto della proposta.</figcaption>
+            </figure>
+            <p class="proposal-copy">Ci sono giorni che rimangono impressi nella memoria.<br>E poi ci sono giorni che cambiano il resto della vita.</p>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="page-inner venue-page">
+            <p class="eyebrow">Il luogo</p>
+            <img class="villa-logo" src="assets/villa-logo.svg" alt="Logo provvisorio Villa delle Magnolie">
+            <h2 id="venueName">Villa delle Magnolie</h2>
+            <p class="venue-copy">Una cornice elegante, immersa nel verde, dove inizierà il prossimo capitolo della nostra storia.</p>
+            <div class="venue-details">
+              <div><span>Indirizzo</span><strong id="venueAddress">Da definire</strong></div>
+              <div><span>Data</span><strong id="weddingDate">Settembre 2027</strong></div>
             </div>
-          </article>
+            <a class="secondary disabled" id="mapLink" href="#" aria-disabled="true">Apri la mappa</a>
+            <p class="form-note">Logo, nome, indirizzo e mappa sono provvisori e potranno essere sostituiti.</p>
+          </div>
+        </article>
 
-          <article class="book-page">
-            <div class="page-content">
-              <p class="chapter-number">Capitolo I</p>
-              <h2>Senza alcun preavviso</h2>
-              <blockquote>Un messaggio ricevuto senza alcun preavviso.<br>Un sorriso strappato.<br>Un momento inaspettato.</blockquote>
-              <div class="photo-placeholder">La vostra prima foto</div>
+        <article class="page">
+          <div class="page-inner wedding-page">
+            <p class="eyebrow">Il prossimo capitolo</p>
+            <h2>Il nostro matrimonio</h2>
+            <div class="wedding-date"><span>SETTEMBRE</span><strong>2027</strong></div>
+            <div class="details-grid">
+              <div><span>Data</span><strong>Da definire</strong></div>
+              <div><span>Cerimonia</span><strong>Da definire</strong></div>
+              <div><span>Ricevimento</span><strong>Da definire</strong></div>
+              <div><span>Dress code</span><strong>Elegante</strong></div>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="book-page">
-            <div class="page-content">
-              <p class="chapter-number">Capitolo II</p>
-              <h2>Il primo incontro</h2>
-              <blockquote>Una sera, il primo incontro,<br>un giro in moto un po’ pazzo.</blockquote>
-            </div>
-          </article>
+        <article class="page">
+          <div class="page-inner rsvp-page">
+            <p class="eyebrow">Conferma la presenza</p>
+            <h2>Ci sarete?</h2>
+            <p class="form-intro">Compilate il modulo entro la data che indicheremo. La risposta verrà inviata direttamente agli sposi.</p>
 
-          <article class="book-page">
-            <div class="page-content">
-              <p class="chapter-number">Capitolo III</p>
-              <h2>Tra risate e vento sul viso</h2>
-              <blockquote>Quel che sembrava soltanto un gioco,<br>ha acceso piano un nuovo fuoco.</blockquote>
-            </div>
-          </article>
+            <form id="rsvpForm" method="POST">
+              <input type="hidden" name="_subject" value="Nuova risposta RSVP — Matrimonio Nicola e Giada">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
 
-          <article class="book-page">
-            <div class="page-content">
-              <p class="chapter-number">Capitolo IV</p>
-              <h2>Insieme</h2>
-              <blockquote>Mille risate, pianti e difficoltà.<br><br>Sei rimasto al mio fianco come un guerriero.</blockquote>
-            </div>
-          </article>
+              <label>Nome e cognome
+                <input required name="Nome e cognome" autocomplete="name">
+              </label>
 
-          <article class="book-page">
-            <div class="page-content">
-              <p class="chapter-number">Capitolo V</p>
-              <h2>Quel giorno</h2>
-              <div class="photo-placeholder">La foto della proposta</div>
-              <p>Ci sono giorni che rimangono impressi nella memoria.<br>E poi ci sono giorni che cambiano il resto della vita.</p>
-            </div>
-          </article>
+              <fieldset>
+                <legend>Parteciperai?</legend>
+                <label class="radio"><input required type="radio" name="Partecipazione" value="Sì, parteciperò"> Sì, parteciperò</label>
+                <label class="radio"><input required type="radio" name="Partecipazione" value="No, non potrò partecipare"> No, non potrò partecipare</label>
+              </fieldset>
 
-          <article class="book-page">
-            <div class="page-content">
-              <p class="chapter-number">Il prossimo capitolo</p>
-              <h2>Il nostro matrimonio</h2>
-              <div class="wedding-date"><span>SETTEMBRE</span><strong>2027</strong></div>
-              <div class="details-grid">
-                <div><span>Data</span><strong>Da definire</strong></div>
-                <div><span>Location</span><strong>Da definire</strong></div>
-                <div><span>Cerimonia</span><strong>Da definire</strong></div>
-                <div><span>Ricevimento</span><strong>Da definire</strong></div>
-              </div>
-            </div>
-          </article>
+              <label>Numero totale di persone
+                <select name="Numero persone">
+                  <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                  <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                </select>
+              </label>
 
-          <article class="book-page">
-            <div class="page-content final-page">
-              <p class="chapter-number">Epilogo</p>
-              <p class="final-monogram">N ♡ G</p>
-              <h2>Grazie per aver sfogliato la nostra storia.</h2>
-              <p>Il prossimo capitolo vorremmo viverlo insieme a voi.</p>
-              <button class="secondary-button" id="restart" type="button">Ricomincia</button>
-            </div>
-          </article>
+              <label>Nomi degli altri invitati
+                <textarea name="Altri invitati" rows="2" placeholder="Scrivi i nomi delle persone incluse nella risposta"></textarea>
+              </label>
 
-          <button class="page-corner" id="nextPage" type="button">Gira pagina</button>
-          <button class="page-back" id="prevPage" type="button">‹</button>
-        </div>
-        <div class="book-progress"><span id="pageIndicator">1 / 8</span></div>
+              <label>Allergie, intolleranze o esigenze alimentari
+                <textarea name="Allergie e intolleranze" rows="3" placeholder="Esempio: celiachia, lattosio, frutta a guscio, vegetariano..."></textarea>
+              </label>
+
+              <label>Messaggio per gli sposi
+                <textarea name="Messaggio" rows="2" placeholder="Facoltativo"></textarea>
+              </label>
+
+              <label class="check"><input required type="checkbox"> Confermo che le informazioni inserite sono corrette.</label>
+
+              <button class="primary" type="submit">Invia la risposta</button>
+              <p id="formStatus" class="form-status" aria-live="polite"></p>
+            </form>
+          </div>
+        </article>
+
+        <article class="page">
+          <div class="page-inner final">
+            <p class="eyebrow">Epilogo</p>
+            <div class="final-mark">N ♡ G</div>
+            <h2>Grazie per aver sfogliato la nostra storia.</h2>
+            <p>Il prossimo capitolo vorremmo viverlo insieme a voi.</p>
+            <button class="secondary" id="restart">Ricomincia</button>
+          </div>
+        </article>
+
+        <button class="page-turn" id="nextPage" aria-label="Gira pagina"><span>Gira pagina</span></button>
+        <button class="page-back" id="prevPage" aria-label="Pagina precedente">‹</button>
       </div>
-    </section>
-  </main>
-  <script src="script.js"></script>
+      <div class="indicator" id="pageIndicator">1 / 10</div>
+    </div>
+  </section>
+</main>
+<script src="config.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
