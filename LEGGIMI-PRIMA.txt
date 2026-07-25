@@ -1,0 +1,27 @@
+NICOLA & GIADA — SITO COMPLETO
+
+Questa cartella contiene una versione completa e coordinata del sito.
+
+FILE DA CARICARE INSIEME SU GITHUB:
+- index.html
+- styles.css
+- script.js
+- 01-inizio.jpg
+- 02-neve.jpg
+- 03-casa.jpg
+- 04-crociera.jpg
+- 05-carnevale.jpg
+- 06-evento.jpg
+- 07-proposta.jpg
+
+ISTRUZIONI:
+1. Apri il repository nicolaegiadawedding su GitHub.
+2. Premi Add file > Upload files.
+3. Trascina TUTTI i 10 file elencati sopra nello stesso caricamento.
+4. Verifica che i nomi siano esattamente quelli indicati.
+5. Premi Commit changes.
+6. Attendi il pallino verde di Vercel.
+7. Ricarica il sito con Ctrl + Shift + R.
+
+Non aprire i file con Word e non copiare il testo visualizzato dal browser:
+carica direttamente i file presenti in questa cartella.
