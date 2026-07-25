@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4efe5">
+  <title>Nicola ♡ Giada — The Wedding Book</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<section class="screen intro" id="intro">
+  <div class="intro-light"></div>
+  <div class="intro-content">
+    <p class="intro-monogram">N ♡ G</p>
+    <h1>La nostra storia<br>inizia così...</h1>
+    <p class="intro-subtitle">The Wedding Book</p>
+    <button id="continueIntro" class="button button-light">Continua</button>
+  </div>
+</section>
+
+<section class="screen envelope-stage hidden" id="envelopeStage">
+  <div class="envelope-wrap" id="envelopeWrap">
+    <div class="envelope" id="envelope">
+      <div class="env-back"></div>
+      <div class="letter-card"><span>N ♡ G</span></div>
+      <div class="env-flap"></div>
+      <div class="env-front"></div>
+      <button id="seal" class="seal" aria-label="Apri il sigillo">N ♡ G</button>
+    </div>
+    <p class="hint">Tocca il sigillo</p>
+  </div>
+
+  <article class="invitation hidden-card" id="invitation">
+    <div class="invitation-inner stationery">
+      <div class="botanical botanical-top-left" aria-hidden="true"></div>
+      <div class="botanical botanical-bottom-right" aria-hidden="true"></div>
+      <p class="eyebrow">Nicola & Giada</p>
+      <p class="script-title">Abbiamo detto sì</p>
+      <div class="heart-divider"><span></span><b>♡</b><span></span></div>
+      <p>
+        Dal 7 dicembre 2019 abbiamo scelto, giorno dopo giorno, di camminare insieme.
+        Ora vogliamo condividere il passo più importante con le persone che fanno parte della nostra vita.
+      </p>
+      <button id="openBook" class="button button-sage">Apri il nostro invito</button>
+    </div>
+  </article>
+</section>
+
+<section class="screen book-stage hidden" id="bookStage">
+  <div class="book-shell">
+    <div class="book">
+
+      <article class="page current">
+        <div class="page-inner stationery cover-page">
+          <div class="botanical botanical-top-left large" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right large" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-left" aria-hidden="true"></div>
+
+          <p class="small-monogram">N ♡ G</p>
+          <p class="script-title display-title">Nicola ♡ Giada</p>
+          <p class="eyebrow">La nostra storia</p>
+          <div class="heart-divider"><span></span><b>♡</b><span></span></div>
+          <p class="cover-quote">
+            Ogni grande storia<br>
+            inizia con un piccolo<br>
+            momento speciale.
+          </p>
+          <div class="wax-seal" aria-hidden="true">❦</div>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery timeline-page">
+          <div class="botanical botanical-top-right medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-left small" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="script-title page-title">La nostra storia</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-icon">◫</div>
+              <div>
+                <span>7 dicembre 2019</span>
+                <strong>Il nostro inizio.</strong>
+                <p>Una data che ha cambiato tutto.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">♡</div>
+              <div>
+                <span>Tanti momenti insieme</span>
+                <strong>Viaggi, risate e avventure.</strong>
+                <p>Chilometri, ricordi e piccoli gesti diventati speciali.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">⌂</div>
+              <div>
+                <span>8 maggio 2024</span>
+                <strong>La nostra casa.</strong>
+                <p>Il posto dove i nostri sogni hanno iniziato a prendere forma.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">◇</div>
+              <div>
+                <span>16 luglio 2026</span>
+                <strong>La proposta.</strong>
+                <p>Sul Monte Grappa, sospesi tra cielo e terra, Nicola ha chiesto a Giada di diventare sua moglie.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery story-page">
+          <div class="botanical botanical-top-left medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right medium" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-left" aria-hidden="true"></div>
+
+          <p class="eyebrow">Capitolo I</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">Il nostro inizio</p>
+
+          <figure class="polaroid slight-left">
+            <img src="01-inizio.jpg" alt="Nicola e Giada all'inizio della loro storia">
+          </figure>
+
+          <p class="story-copy">
+            Il 7 dicembre 2019 è iniziato il nostro «noi».
+            Non potevamo sapere quanta strada avremmo percorso,
+            ma fin da subito stare insieme ci è sembrato il posto giusto.
+          </p>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery story-page">
+          <div class="botanical botanical-top-right medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-left medium" aria-hidden="true"></div>
+
+          <p class="eyebrow">Capitolo II</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">Tanti momenti insieme</p>
+
+          <figure class="polaroid slight-right">
+            <img src="02-neve.jpg" alt="Nicola e Giada sulla neve">
+          </figure>
+
+          <p class="story-copy">
+            Abbiamo imparato a conoscerci davvero nelle giornate semplici,
+            nei primi viaggi e perfino nel freddo della neve.
+            È lì che il nostro amore ha iniziato a diventare casa.
+          </p>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery story-page">
+          <div class="botanical botanical-top-left small" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right large" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="eyebrow">Capitolo III</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">La nostra casa</p>
+
+          <figure class="polaroid slight-left">
+            <img src="03-casa.jpg" alt="Nicola e Giada il giorno del rogito">
+          </figure>
+
+          <p class="story-copy">
+            L’8 maggio 2024 abbiamo ricevuto le chiavi della nostra prima casa.
+            Non abbiamo firmato soltanto un rogito:
+            abbiamo dato un indirizzo ai nostri progetti
+            e alla vita che stavamo costruendo.
+          </p>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery memories-page">
+          <div class="botanical botanical-top-right small" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-left medium" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="eyebrow">Capitolo IV</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">Il nostro viaggio</p>
+          <p class="page-intro">Alcuni istanti che raccontano la nostra felicità.</p>
+
+          <div class="photo-collage">
+            <figure class="collage-card card-one">
+              <img src="04-crociera.jpg" alt="Nicola e Giada in crociera">
+            </figure>
+            <figure class="collage-card card-two">
+              <img src="05-carnevale.jpg" alt="Nicola e Giada al Carnevale">
+            </figure>
+            <figure class="collage-card card-three">
+              <img src="06-evento.jpg" alt="Nicola e Giada durante un evento">
+            </figure>
+          </div>
+
+          <p class="story-copy short-copy">
+            Ogni viaggio, ogni risata e ogni nuova avventura
+            hanno scritto un pezzo della nostra storia.
+          </p>
+        </div>
+      </article>
+
+      <article class="page chapter-five">
+        <div class="page-inner stationery proposal-page">
+          <div class="botanical botanical-top-right small" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right medium" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="eyebrow">Capitolo V</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">La proposta</p>
+
+          <figure class="polaroid proposal-photo slight-left">
+            <img src="07-proposta.jpg" alt="La proposta di matrimonio sul Monte Grappa">
+          </figure>
+
+          <p class="proposal-date">16 luglio 2026</p>
+          <p class="story-copy proposal-copy">
+            Sul Monte Grappa, sospesi tra cielo e terra,
+            Nicola ha trasformato un volo in parapendio
+            nel giorno della nostra promessa.
+            Tra emozione, sorpresa e incredulità, Giada ha detto sì.
+          </p>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery wedding-page">
+          <div class="botanical botanical-top-left medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right large" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-left" aria-hidden="true"></div>
+
+          <p class="eyebrow">Il nostro matrimonio</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">Il prossimo capitolo</p>
+          <p class="wedding-intro">
+            Ora è arrivato il momento di scrivere il capitolo più bello di tutti.
+          </p>
+
+          <div class="wedding-details">
+            <div>
+              <span class="detail-icon">□</span>
+              <small>Data</small>
+              <strong>Settembre 2027</strong>
+            </div>
+            <div>
+              <span class="detail-icon">⌖</span>
+              <small>Location</small>
+              <strong>Dettagli in arrivo</strong>
+            </div>
+            <div>
+              <span class="detail-icon">♡</span>
+              <small>Con noi</small>
+              <strong>Le persone che amiamo</strong>
+            </div>
+          </div>
+
+          <p class="script-note">Per sempre insieme.</p>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery rsvp-page">
+          <div class="botanical botanical-top-left medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right medium" aria-hidden="true"></div>
+
+          <p class="script-title page-title">Sei invitato</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="page-intro">Conferma la tua presenza e condividi con noi l’emozione di questo giorno.</p>
+
+          <form id="rsvpForm" class="rsvp-form">
+            <div class="form-grid">
+              <label>
+                <span>Nome e cognome</span>
+                <input name="nome" required>
+              </label>
+
+              <label>
+                <span>Numero di persone</span>
+                <select name="persone">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              <span>Parteciperete?</span>
+              <select name="presenza">
+                <option>Sì, con grande piacere</option>
+                <option>No, purtroppo non riusciremo</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Allergie o intolleranze</span>
+              <input name="allergie">
+            </label>
+
+            <label>
+              <span>Un messaggio per noi</span>
+              <textarea name="messaggio"></textarea>
+            </label>
+
+            <button type="submit" class="button button-sage">Invia la risposta</button>
+            <p id="confirmation" class="confirmation">Grazie. La vostra risposta è stata consegnata. ♡</p>
+          </form>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery final-page">
+          <div class="botanical botanical-top-right large" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-left medium" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="eyebrow">Grazie</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="final-copy">
+            Il prossimo capitolo della nostra storia
+            vogliamo scriverlo insieme a voi.
+          </p>
+          <p class="script-title final-signature">Nicola ♡ Giada</p>
+          <div class="wax-seal small-seal" aria-hidden="true">❦</div>
+          <button id="restart" class="button button-outline">Ricomincia</button>
+        </div>
+      </article>
+
+      <button id="prevPage" class="page-nav prev-page" aria-label="Pagina precedente">‹</button>
+      <button id="nextPage" class="page-nav next-page" aria-label="Pagina successiva">›</button>
+    </div>
+
+    <div id="counter" class="counter">1 / 10</div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
