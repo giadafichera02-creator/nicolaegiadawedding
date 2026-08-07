@@ -551,7 +551,18 @@ button{touch-action:manipulation}
 .page.turning{
   z-index:8;
   opacity:1;
-  animation:pageTurn .82s var(--ease) forwards;
+  animation:pageFadeOut .32s ease forwards;
+}
+
+@keyframes pageFadeOut{
+  from{
+    opacity:1;
+    transform:translateX(0);
+  }
+  to{
+    opacity:0;
+    transform:translateX(-12px);
+  }
 }
 
 .page-inner{
