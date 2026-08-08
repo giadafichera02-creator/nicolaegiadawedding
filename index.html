@@ -2770,6 +2770,148 @@ button{touch-action:manipulation}
   .live-copy{font-size:15px}
 }
 
+
+/* =========================================================
+   FIX PAGINA 1 — TESTI NON SOVRAPPOSTI
+   ========================================================= */
+
+.cover-page{
+  justify-content:center!important;
+  padding-top:clamp(82px,10vh,112px)!important;
+  padding-bottom:95px!important;
+}
+
+.cover-page .small-monogram{
+  position:relative!important;
+  top:auto!important;
+  right:auto!important;
+  left:auto!important;
+  transform:none!important;
+  margin:0 0 18px!important;
+  font-size:clamp(13px,1.6vw,17px)!important;
+  line-height:1!important;
+  letter-spacing:.20em!important;
+  z-index:4!important;
+}
+
+.cover-page .display-title{
+  width:100%!important;
+  max-width:900px!important;
+  margin:0 auto 13px!important;
+  font-size:clamp(62px,9vw,96px)!important;
+  line-height:1.08!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  text-align:center!important;
+}
+
+.cover-page .eyebrow{
+  margin-top:2px!important;
+  font-size:clamp(10px,1.2vw,13px)!important;
+  line-height:1.3!important;
+}
+
+.cover-page .heart-divider{
+  margin-top:16px!important;
+  margin-bottom:22px!important;
+}
+
+.cover-page .cover-quote{
+  line-height:1.45!important;
+}
+
+/* Mobile: mantieni Nicola ♡ Giada su una sola riga senza schiacciarlo */
+@media(max-width:680px){
+  .cover-page{
+    padding-top:72px!important;
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+
+  .cover-page .small-monogram{
+    margin-bottom:14px!important;
+    font-size:11px!important;
+  }
+
+  .cover-page .display-title{
+    font-size:clamp(50px,13vw,72px)!important;
+    line-height:1.05!important;
+    letter-spacing:-.015em!important;
+  }
+
+  .cover-page .eyebrow{
+    margin-top:5px!important;
+    font-size:10px!important;
+  }
+
+  .cover-page .cover-quote{
+    font-size:clamp(20px,5.8vw,28px)!important;
+    line-height:1.45!important;
+  }
+}
+
+/* Telefoni molto stretti */
+@media(max-width:390px){
+  .cover-page .display-title{
+    font-size:clamp(43px,12vw,58px)!important;
+  }
+}
+
+
+/* =========================================================
+   FIX PAGINA ITINERARIO
+   ========================================================= */
+
+.itinerary-page .eyebrow{
+  margin-bottom:2px!important;
+  font-size:clamp(10px,1.2vw,13px)!important;
+  letter-spacing:.20em!important;
+}
+
+.itinerary-page .heart-divider.compact{
+  margin:9px auto 12px!important;
+}
+
+.itinerary-page .page-title.itinerary-title{
+  display:block!important;
+  width:100%!important;
+  max-width:760px!important;
+  margin:0 auto!important;
+  font-size:clamp(58px,8.5vw,88px)!important;
+  line-height:1.12!important;
+  overflow:visible!important;
+  white-space:nowrap!important;
+  text-align:center!important;
+}
+
+/* Apostrofo reso volutamente più leggibile del resto del corsivo */
+.itinerary-title .itinerary-prefix{
+  display:inline-block;
+  margin-right:.02em;
+  font-family:"Cormorant Garamond", Georgia, serif!important;
+  font-size:.72em!important;
+  font-style:italic!important;
+  font-weight:500!important;
+  vertical-align:.14em!important;
+  color:#53614d!important;
+}
+
+.itinerary-page .page-intro{
+  margin-top:6px!important;
+}
+
+@media(max-width:680px){
+  .itinerary-page .page-title.itinerary-title{
+    font-size:clamp(49px,13vw,68px)!important;
+    white-space:nowrap!important;
+  }
+
+  .itinerary-title .itinerary-prefix{
+    font-size:.70em!important;
+    vertical-align:.16em!important;
+  }
+}
+
 </style>
 </head>
 
@@ -3136,9 +3278,9 @@ button{touch-action:manipulation}
           <div class="botanical botanical-bottom-left medium" aria-hidden="true"></div>
           <div class="gold-speckles speckles-right" aria-hidden="true"></div>
 
-          <p class="eyebrow">Il nostro giorno</p>
+          <p class="eyebrow">Organizzazione giornata</p>
           <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
-          <p class="script-title page-title">L’itinerario</p>
+          <p class="script-title page-title itinerary-title"><span class="itinerary-prefix">L&#39;</span>itinerario</p>
           <p class="page-intro">Un’anteprima dei momenti che condivideremo insieme.</p>
 
           <div class="day-itinerary">
