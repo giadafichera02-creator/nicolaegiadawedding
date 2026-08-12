@@ -1,0 +1,1602 @@
+```
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4efe5">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="wedding-site-version" content="apertura-realistica-salvia-v3">
+  <title>Nicola ♡ Giada — The Wedding Book</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  
+</head>
+
+
+<body>
+  <section class="screen intro" id="intro">
+  <div class="intro-light"></div>
+  <div class="intro-content">
+    <p class="intro-monogram">N ♡ G</p>
+    <h1>La nostra storia<br>inizia così...</h1>
+    <p class="intro-subtitle">The Wedding Book</p>
+    <button id="continueIntro" class="button button-light">Continua</button>
+  </div>
+</section>
+
+<section class="screen envelope-stage hidden" id="envelopeStage">
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <div class="photo-envelope-scene" id="envelopeWrap">
+    <div class="photo-canvas" id="photoCanvas">
+      <img class="photo-envelope-image" src="busta-fotorealistica.png" alt="Busta avorio con sigillo in ceralacca verde salvia">
+      <img class="wax-v3-no-seal" src="busta-senza-sigillo-v3.png" alt="" aria-hidden="true">
+      <img class="wax-v3-interior" src="interno-busta-v3.png" alt="" aria-hidden="true">
+      <img class="wax-v3-flap" src="lembo-busta-reale-v3.png" alt="" aria-hidden="true">
+
+      <div class="wax-v3-fragments" aria-hidden="true">
+        <img class="wax-v3-piece p1" src="ceralacca-frammento-1.png" alt="">
+        <img class="wax-v3-piece p2" src="ceralacca-frammento-2.png" alt="">
+        <img class="wax-v3-piece p3" src="ceralacca-frammento-3.png" alt="">
+        <img class="wax-v3-piece p4" src="ceralacca-frammento-4.png" alt="">
+      </div>
+<button id="seal" class="photo-seal-hotspot" aria-label="Apri il sigillo">
+        <span class="seal-focus-ring" aria-hidden="true"></span>
+        <span class="seal-crack crack-one" aria-hidden="true"></span>
+        <span class="seal-crack crack-two" aria-hidden="true"></span>
+        <span class="seal-crack crack-three" aria-hidden="true"></span>
+        <span class="wax-v3-crack branch-a" aria-hidden="true"></span>
+        <span class="wax-v3-crack branch-b" aria-hidden="true"></span>
+        <span class="wax-v3-crack branch-c" aria-hidden="true"></span>
+      </button>
+
+      <div class="opening-glow" aria-hidden="true"></div>
+      <p class="photo-envelope-hint">Clicca sul sigillo per aprire</p>
+    </div>
+  </div>
+
+  
+<article class="invitation hidden-card invitation-new-cover" id="invitation">
+  <img
+    class="invitation-new-cover-image"
+    src="prima-pagina-romantica.png"
+    alt="Partecipazione romantica di Nicola e Giada, 3 settembre 2027">
+<div class="live-invite" id="liveInvite">
+  <img class="invite-leaf-a" src="foglie-a.png" alt="" aria-hidden="true">
+  <img class="invite-leaf-b" src="foglie-b.png" alt="" aria-hidden="true">
+  <img class="invite-rose" src="rosa-a.png" alt="" aria-hidden="true">
+
+  <div class="live-invite-content">
+    <p class="live-kicker">Nicola &amp; Giada</p>
+    <h2 class="live-script">Sei invitato al nostro matrimonio</h2>
+    <div class="live-divider" aria-hidden="true">♡</div>
+    <h1 class="live-month">03 · SETTEMBRE · 2027</h1>
+    <p class="live-copy">
+      Dal 14 ottobre 2018 abbiamo scelto, giorno dopo giorno, di camminare insieme.
+      Ora vogliamo condividere il passo più importante con le persone che fanno parte della nostra vita.
+    </p>
+    <button class="live-open" id="liveOpenInvitation" type="button">Apri il nostro invito</button>
+  </div>
+</div>
+
+
+  <button
+    id="openBook"
+    class="invitation-new-cover-button"
+    type="button"
+    aria-label="Apri il nostro invito"></button>
+</article>
+</section>
+
+
+<div id="invitationImageZoom" class="invitation-image-zoom" aria-hidden="true">
+  <button id="closeInvitationZoom" type="button" aria-label="Chiudi ingrandimento">×</button>
+  <img src="prima-pagina-romantica.png" alt="Partecipazione Nicola e Giada">
+</div>
+
+<section class="screen book-stage hidden" id="bookStage">
+  <div class="book-shell">
+    <div class="book-toolbar">
+      <button id="chapterMenuButton" class="book-tool" type="button" aria-label="Apri indice dei capitoli">☰ <span>Indice</span></button>
+      <div class="reading-progress" aria-label="Avanzamento lettura">
+        <div id="readingProgressBar"></div>
+      </div>
+      
+    </div>
+
+    <aside id="chapterMenu" class="chapter-menu hidden" aria-label="Indice dei capitoli">
+      <div class="chapter-menu-card">
+        <div class="chapter-menu-head">
+          <div>
+            <small>Nicola & Giada</small>
+            <strong>Indice</strong>
+          </div>
+          <button id="closeChapterMenu" type="button" aria-label="Chiudi indice">×</button>
+        </div>
+        <nav id="chapterLinks"></nav>
+      </div>
+    </aside>
+
+    <div class="book">
+
+      <article class="page current">
+        <div class="page-inner stationery cover-page">
+          <div class="botanical botanical-top-left large" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right large" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-left" aria-hidden="true"></div>
+
+          <p class="small-monogram">N ♡ G</p>
+          <p class="script-title display-title">Nicola ♡ Giada</p>
+          <p class="eyebrow">La nostra storia</p>
+          <div class="heart-divider"><span></span><b>♡</b><span></span></div>
+          <p class="cover-quote">
+            Ogni grande storia<br>
+            inizia con un piccolo<br>
+            momento speciale.
+          </p>
+          <div class="wax-seal" aria-hidden="true">❦</div>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery timeline-page fairytale-home-page fairytale-travel-page fairytale-proposal-page fairytale-wedding-page fairytale-countdown-page fairytale-rsvp-page fairytale-story-intro">
+          <div class="botanical botanical-top-right medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-left small" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="script-title page-title">La nostra storia</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-icon">◫</div>
+              <div>
+                <span>14 ottobre 2018</span>
+                <strong>Il nostro inizio.</strong>
+                <p>Una data che ha cambiato tutto.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">♡</div>
+              <div>
+                <span>Tanti momenti insieme</span>
+                <strong>Viaggi, risate e avventure.</strong>
+                <p>Chilometri, ricordi e piccoli gesti diventati speciali.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">⌂</div>
+              <div>
+                <span>8 maggio 2024</span>
+                <strong>La nostra casa.</strong>
+                <p>Il posto dove i nostri sogni hanno iniziato a prendere forma.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">◇</div>
+              <div>
+                <span>16 luglio 2026</span>
+                <strong>La proposta.</strong>
+                <p>Sul Monte Grappa, sospesi tra cielo e terra, Nicola ha chiesto a Giada di diventare sua moglie.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery story-page fairytale-start-page">
+          <div class="botanical botanical-top-left medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right medium" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-left" aria-hidden="true"></div>
+
+          <div class="fairy-lights" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+
+          <div class="fairytale-corner corner-one" aria-hidden="true">✦</div>
+          <div class="fairytale-corner corner-two" aria-hidden="true">♡</div>
+
+          <div class="fairytale-start-layout">
+            <div class="fairytale-photo-side">
+              <div class="scrap-ribbon ribbon-one" aria-hidden="true"></div>
+              <div class="scrap-ribbon ribbon-two" aria-hidden="true"></div>
+
+              <figure class="polaroid fairytale-main-photo" id="fairytaleStartPhoto">
+                <img src="01-inizio-originale.jpeg" alt="Nicola e Giada all'inizio della loro storia">
+                <figcaption>Dove tutto è cominciato ♡</figcaption>
+              </figure>
+
+              <button class="fairytale-note-card" id="fairytaleStartNote" type="button" aria-expanded="false">
+                <span class="note-date">14 · 10 · 2018</span>
+                <strong>Per sempre, noi.</strong>
+                <small>Tocca per scoprire una dedica</small>
+              </button>
+
+              <div class="fairytale-secret-note" id="fairytaleSecretNote">
+                Da quel giorno, senza sapere dove ci avrebbe portati la vita,
+                abbiamo iniziato a scegliere la stessa direzione.
+              </div>
+
+              <div class="fairytale-charms" aria-hidden="true">
+                <span>♡</span><span>✧</span><span>∞</span>
+              </div>
+            </div>
+
+            <div class="fairytale-story-side">
+              <p class="eyebrow">Capitolo I</p>
+              <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+
+              <p class="fairytale-overline">La nostra storia</p>
+              <p class="script-title page-title fairytale-title">Il nostro Inizio</p>
+
+              <p class="story-copy fairytale-story-copy">
+                Il 14 ottobre 2018 è iniziato il nostro «noi».
+                Non potevamo sapere quanta strada avremmo percorso,
+                ma fin da subito stare insieme ci è sembrato il posto giusto.
+              </p>
+
+              <div class="fairytale-gold-rule" aria-hidden="true">
+                <span></span><b>✦</b><span></span>
+              </div>
+
+              <p class="fairytale-handwritten">
+                «E senza accorgercene, un piccolo momento<br>
+                è diventato tutta la nostra storia.»
+              </p>
+
+              <div class="fairytale-seal" aria-hidden="true">N♡G</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery story-page fairytale-moments-page">
+          <div class="botanical botanical-top-right medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-left medium" aria-hidden="true"></div>
+
+          <div class="moments-sparkles" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i>
+          </div>
+
+          <div class="moments-layout">
+            <div class="moments-heading">
+              <p class="eyebrow">Capitolo II</p>
+              <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+              <p class="moments-overline">Pagine di noi</p>
+              <p class="script-title page-title moments-title">Tanti momenti<br>insieme</p>
+            </div>
+
+            <div class="moments-scrapbook">
+              <div class="moments-paper-note note-back" aria-hidden="true">
+                <span>ricordi</span>
+              </div>
+
+              <figure class="polaroid moments-photo main-memory" id="momentsMainPhoto">
+                <img src="02-neve.jpg" alt="Nicola e Giada sulla neve">
+                <figcaption>Uno dei nostri ricordi ♡</figcaption>
+              </figure>
+
+              <div class="moments-mini-card mini-one" aria-hidden="true">
+                <span>14.10</span>
+                <b>∞</b>
+              </div>
+
+              <div class="moments-mini-card mini-two" aria-hidden="true">
+                <span>you &amp; me</span>
+                <b>♡</b>
+              </div>
+
+              <div class="moments-tape tape-a" aria-hidden="true"></div>
+              <div class="moments-tape tape-b" aria-hidden="true"></div>
+
+              <button class="moments-memory-ticket" id="momentsMemoryTicket" type="button" aria-expanded="false">
+                <span>UN PICCOLO RICORDO</span>
+                <strong>Aprimi ♡</strong>
+              </button>
+            </div>
+
+            <div class="moments-copy-area">
+              <p class="story-copy moments-story-copy">
+                Abbiamo imparato a conoscerci davvero nelle giornate semplici,
+                nei primi viaggi e perfino nel freddo della neve.
+                È lì che il nostro amore ha iniziato a diventare casa.
+              </p>
+
+              <div class="moments-rule" aria-hidden="true">
+                <span></span><b>✦</b><span></span>
+              </div>
+
+              <p class="moments-quote">
+                «Non sono stati soltanto i grandi momenti.<br>
+                Sono state tutte le piccole cose, insieme.»
+              </p>
+
+              <div class="moments-hidden-memory" id="momentsHiddenMemory">
+                Ogni fotografia custodisce un istante, ma quello che amiamo di più
+                è tutto ciò che è successo tra una foto e l'altra.
+              </div>
+            </div>
+          </div>
+
+          <div class="moments-charm charm-heart" aria-hidden="true">♡</div>
+          <div class="moments-charm charm-star" aria-hidden="true">✧</div>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery story-page">
+          <div class="botanical botanical-top-left small" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right large" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="eyebrow">Capitolo III</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">La nostra casa</p>
+
+          <figure class="polaroid slight-left">
+            <img src="03-casa.jpg" alt="Nicola e Giada il giorno del rogito">
+          </figure>
+
+          <p class="story-copy">
+            L’8 maggio 2024 abbiamo ricevuto le chiavi della nostra prima casa.
+            Non abbiamo firmato soltanto un rogito:
+            abbiamo dato un indirizzo ai nostri progetti
+            e alla vita che stavamo costruendo.
+          </p>
+          <button class="memory-trigger key-trigger" id="homeKeyTrigger" type="button" aria-expanded="false">
+            <span aria-hidden="true">⚿</span>
+            Tocca la chiave
+          </button>
+          <div class="memory-note" id="homeDedication">
+            La nostra casa non è fatta soltanto di mura: è il luogo in cui ogni giorno scegliamo ancora noi.
+          </div>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery memories-page">
+          <div class="botanical botanical-top-right small" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-left medium" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="eyebrow">Capitolo IV</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">Il nostro viaggio</p>
+          <p class="page-intro">Alcuni istanti che raccontano la nostra felicità.</p>
+
+          <div class="photo-collage">
+            <figure class="collage-card card-one">
+              <img src="04-crociera.jpg" alt="Nicola e Giada in crociera">
+            </figure>
+            <figure class="collage-card card-two">
+              <img src="05-carnevale.jpg" alt="Nicola e Giada al Carnevale">
+            </figure>
+            <figure class="collage-card card-three">
+              <img src="06-evento.jpg" alt="Nicola e Giada durante un evento">
+            </figure>
+          </div>
+
+          <p class="story-copy short-copy">
+            Ogni viaggio, ogni risata e ogni nuova avventura
+            hanno scritto un pezzo della nostra storia.
+          </p>
+        </div>
+      </article>
+
+      <article class="page chapter-five">
+        <div class="page-inner stationery proposal-page">
+          <div class="botanical botanical-top-right small" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right medium" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="eyebrow">Capitolo V</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">La proposta</p>
+
+          <figure class="polaroid proposal-photo slight-left">
+            <img src="07-proposta.jpg" alt="La proposta di matrimonio sul Monte Grappa">
+          </figure>
+
+          <p class="proposal-date">16 luglio 2026</p>
+          <p class="story-copy proposal-copy">
+            Sul Monte Grappa, sospesi tra cielo e terra,
+            Nicola ha trasformato un volo in parapendio
+            nel giorno della nostra promessa.
+            Tra emozione, sorpresa e incredulità, Giada ha detto sì.
+          </p>
+          <button class="memory-trigger ring-trigger" id="proposalRingTrigger" type="button" aria-expanded="false">
+            <span aria-hidden="true">◇</span>
+            Tocca l’anello
+          </button>
+          <div class="memory-note proposal-secret" id="proposalSecret">
+            In quel momento il mondo sembrava lontanissimo. C’eravamo soltanto noi, il vento e una promessa per tutta la vita.
+          </div>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery wedding-page">
+          <div class="botanical botanical-top-left medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right large" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-left" aria-hidden="true"></div>
+
+          <p class="eyebrow">Il nostro matrimonio</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">Il prossimo capitolo</p>
+          <p class="wedding-intro">
+            Ora è arrivato il momento di scrivere il capitolo più bello di tutti.
+          </p>
+
+          <div class="wedding-details">
+            <div>
+              <span class="detail-icon">□</span>
+              <small>Data</small>
+              <strong>3 settembre 2027</strong>
+            </div>
+            <div>
+              <span class="detail-icon">⌖</span>
+              <small>Location</small>
+              <strong>Tenuta Cartirago<br><span class="location-city">Rovigo</span></strong>
+            </div>
+            <div>
+              <span class="detail-icon">♡</span>
+              <small>Con noi</small>
+              <strong>Le persone che amiamo</strong>
+            </div>
+          </div>
+
+          <p class="script-note">Per sempre insieme.</p>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery location-page fairytale-location-page">
+          <div class="botanical botanical-top-right medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-left large" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="eyebrow">Il luogo del nostro Sì</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">Tenuta Cartirago</p>
+
+          <figure class="location-photo-frame">
+            <div class="location-photo-tape tape-left" aria-hidden="true"></div>
+            <div class="location-photo-tape tape-right" aria-hidden="true"></div>
+            <img
+              class="location-main-photo"
+              src="tenuta-cartirago-tramonto.png"
+              alt="Tenuta Cartirago al tramonto, con il vialetto e la struttura illuminata">
+            <figcaption>Il luogo in cui festeggeremo il nostro Sì</figcaption>
+          </figure>
+
+          <div class="location-hero-card">
+            <div class="location-crest" aria-hidden="true">N ♡ G</div>
+            <p class="location-date-big">03 · 09 · 2027</p>
+            <p class="location-place">Tenuta Cartirago</p>
+            <p class="location-town">Rovigo</p>
+
+            <div class="location-gold-rule" aria-hidden="true"><span></span><b>✦</b><span></span></div>
+
+            <p class="location-copy">
+              È qui che vivremo uno dei capitoli più belli della nostra storia,
+              insieme alle persone che amiamo.
+            </p>
+
+            <a class="location-main-button"
+               href="https://www.google.com/maps/search/?api=1&query=Tenuta%20Cartirago%20Rovigo"
+               target="_blank"
+               rel="noopener noreferrer">
+              Apri le indicazioni
+            </a>
+          </div>
+
+          <p class="location-script-note">Ci vediamo lì. ♡</p>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery countdown-page">
+          <div class="botanical botanical-top-left medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right large" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-left" aria-hidden="true"></div>
+
+          <p class="eyebrow">3 settembre 2027</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">Manca sempre meno</p>
+          <p class="countdown-intro">Ogni giorno ci avvicina al momento più bello della nostra storia.</p>
+
+          <div class="countdown video-countdown" id="weddingCountdown" aria-label="Conto alla rovescia al matrimonio">
+            <div class="count-unit">
+              <strong id="countDays">000</strong>
+              <span>giorni</span>
+            </div>
+            <div class="count-unit">
+              <strong id="countHours">00</strong>
+              <span>ore</span>
+            </div>
+            <div class="count-unit">
+              <strong id="countMinutes">00</strong>
+              <span>minuti</span>
+            </div>
+            <div class="count-unit">
+              <strong id="countSeconds">00</strong>
+              <span>secondi</span>
+            </div>
+          </div>
+
+          <p class="countdown-note" id="countdownNote">Al nostro “Sì”.</p>
+          <p class="provisional-note confirmed-note">Tenuta Cartirago · Rovigo</p>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery itinerary-page">
+          <div class="botanical botanical-top-right medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-left medium" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="eyebrow">Organizzazione giornata</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title itinerary-title"><span class="itinerary-prefix">L&#39;</span>itinerario</p>
+          <p class="page-intro">Un’anteprima dei momenti che condivideremo insieme.</p>
+
+          <div class="day-itinerary">
+            <div class="itinerary-stop">
+              <div class="itinerary-symbol">♡</div>
+              <div>
+                <strong>Cerimonia</strong>
+                <span>Il momento in cui inizierà il nostro per sempre.</span>
+                <small>Orario in arrivo</small>
+              </div>
+            </div>
+
+            <div class="itinerary-stop">
+              <div class="itinerary-symbol">◇</div>
+              <div>
+                <strong>Aperitivo</strong>
+                <span>Un brindisi insieme alle persone che amiamo.</span>
+                <small>Dettagli in arrivo</small>
+              </div>
+            </div>
+
+            <div class="itinerary-stop">
+              <div class="itinerary-symbol">❦</div>
+              <div>
+                <strong>Cena</strong>
+                <span>Sapori, sorrisi ed emozioni da condividere.</span>
+                <small>Dettagli in arrivo</small>
+              </div>
+            </div>
+
+            <div class="itinerary-stop">
+              <div class="itinerary-symbol">♕</div>
+              <div>
+                <strong>Taglio della torta</strong>
+                <span>Un momento speciale sotto il cielo di settembre.</span>
+                <small>Dettagli in arrivo</small>
+              </div>
+            </div>
+
+            <div class="itinerary-stop">
+              <div class="itinerary-symbol">♫</div>
+              <div>
+                <strong>Balli e festa</strong>
+                <span>Per concludere la giornata con musica e felicità.</span>
+                <small>Dettagli in arrivo</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-coming location-confirmed">
+            <span>⌖</span>
+            <div>
+              <small>Location e indicazioni</small>
+              <strong>Tenuta Cartirago</strong>
+              <span class="location-subline">Rovigo</span>
+            </div>
+            <a class="location-map-link"
+               href="https://www.google.com/maps/search/?api=1&query=Tenuta%20Cartirago%20Rovigo"
+               target="_blank"
+               rel="noopener noreferrer">Portami lì ♡</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="page">
+        <div class="page-inner stationery rsvp-page fairytale-finale-page">
+          <div class="botanical botanical-top-left medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-right medium" aria-hidden="true"></div>
+
+          <p class="script-title page-title">Sei invitato</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="page-intro">Conferma la tua presenza e condividi con noi l’emozione di questo giorno.</p>
+
+          <form id="rsvpForm" class="rsvp-form"
+                action="https://formspree.io/f/mojgpwge"
+                method="POST">
+            <input type="hidden" name="_subject" value="Nuova risposta RSVP – Matrimonio Nicola e Giada">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+                   style="position:absolute;left:-9999px" aria-hidden="true">
+            <div class="form-grid">
+              <label>
+                <span>Nome e cognome di chi compila</span>
+                <input name="nome" required
+                       placeholder="Il tuo nome e cognome"
+                       autocomplete="name">
+              </label>
+
+              <label>
+                <span>Numero di persone che verranno</span>
+                <select name="persone" id="persone" required>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+            </div>
+
+            <fieldset id="guestNamesFieldset" class="guest-names-fieldset">
+              <legend>Chi verrà?</legend>
+              <p class="guest-names-help">
+                Inserisci nome e cognome di ogni persona che parteciperà.
+              </p>
+
+              <div class="guest-names-grid">
+                <label class="guest-name-row" data-guest="1">
+                  <span>1ª persona</span>
+                  <input id="ospite1" name="ospite_1_nome_cognome" type="text"
+                         placeholder="Nome e cognome della 1ª persona" autocomplete="name">
+                </label>
+
+                <label class="guest-name-row hidden" data-guest="2">
+                  <span>2ª persona</span>
+                  <input id="ospite2" name="ospite_2_nome_cognome" type="text"
+                         placeholder="Nome e cognome della 2ª persona" autocomplete="name">
+                </label>
+
+                <label class="guest-name-row hidden" data-guest="3">
+                  <span>3ª persona</span>
+                  <input id="ospite3" name="ospite_3_nome_cognome" type="text"
+                         placeholder="Nome e cognome della 3ª persona" autocomplete="name">
+                </label>
+
+                <label class="guest-name-row hidden" data-guest="4">
+                  <span>4ª persona</span>
+                  <input id="ospite4" name="ospite_4_nome_cognome" type="text"
+                         placeholder="Nome e cognome della 4ª persona" autocomplete="name">
+                </label>
+
+                <label class="guest-name-row hidden" data-guest="5">
+                  <span>5ª persona</span>
+                  <input id="ospite5" name="ospite_5_nome_cognome" type="text"
+                         placeholder="Nome e cognome della 5ª persona" autocomplete="name">
+                </label>
+              </div>
+            </fieldset>
+
+            <label>
+              <span>Parteciperete?</span>
+              <select name="presenza" id="presenza" required>
+                <option>Sì, con grande piacere</option>
+                <option>No, purtroppo non riusciremo</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Allergie o intolleranze</span>
+              <input name="allergie">
+            </label>
+
+            <label>
+              <span>Un messaggio per noi</span>
+              <textarea name="messaggio"></textarea>
+            </label>
+
+            <button id="rsvpSubmit" type="submit" class="button button-sage">Invia la risposta</button>
+            <p id="confirmation" class="confirmation">Grazie. La vostra risposta è stata consegnata. ♡</p>
+          </form>
+        </div>
+      </article>
+
+
+      <article class="page">
+        <div class="page-inner stationery faq-page video-faq-page">
+          <div class="botanical botanical-top-right medium" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-left medium" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="eyebrow">Hai dei dubbi?</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="script-title page-title">Domande frequenti</p>
+          <p class="page-intro">Qui raccoglieremo le informazioni utili per vivere la giornata senza pensieri.</p>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>È previsto un dress code?<span>＋</span></summary>
+              <p>Non imponiamo un dress code preciso: scegliete qualcosa che vi faccia sentire eleganti, comodi e pronti a festeggiare con noi.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>I bambini sono invitati?<span>＋</span></summary>
+              <p>Sì. Nella conferma RSVP potete indicare tutte le persone che parteciperanno insieme a voi.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Dove si svolgerà il matrimonio?<span>＋</span></summary>
+              <p>Festeggeremo a Tenuta Cartirago, Rovigo. Nella pagina dedicata alla location trovate il pulsante per aprire direttamente le indicazioni.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Come comunico allergie o intolleranze?<span>＋</span></summary>
+              <p>Potete inserirle direttamente nel modulo RSVP, nell'apposito campo dedicato.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Entro quando devo confermare?<span>＋</span></summary>
+              <p>La data limite verrà comunicata più avanti. Quando sarà definita la inseriremo qui nel sito.</p>
+            </details>
+          </div>
+
+          <p class="faq-ending">Non vediamo l'ora di festeggiare con voi. ♡</p>
+        </div>
+      </article>
+
+      <article class="page final-celebration-page">
+        <div id="finalPetals" class="final-petals" aria-hidden="true"></div>
+        <div class="page-inner stationery final-page">
+          <div class="botanical botanical-top-right large" aria-hidden="true"></div>
+          <div class="botanical botanical-bottom-left medium" aria-hidden="true"></div>
+          <div class="gold-speckles speckles-right" aria-hidden="true"></div>
+
+          <p class="eyebrow">Grazie</p>
+          <div class="heart-divider compact"><span></span><b>♡</b><span></span></div>
+          <p class="final-copy">
+            Il prossimo capitolo della nostra storia
+            vogliamo scriverlo insieme a voi.
+          </p>
+          <p class="script-title final-signature">Nicola ♡ Giada</p>
+          <div class="wax-seal small-seal" aria-hidden="true">❦</div>
+          <button id="restart" class="button button-outline">Ricomincia</button>
+        </div>
+      </article>
+
+      <button id="prevPage" class="page-nav prev-page" aria-label="Pagina precedente">‹</button>
+      <button id="nextPage" class="page-nav next-page" aria-label="Pagina successiva">›</button>
+    </div>
+
+    <div id="counter" class="counter">1 / 12</div>
+  </div>
+</section>  <script>
+const intro = document.getElementById("intro");
+const envelopeStage = document.getElementById("envelopeStage");
+const envelopeWrap = document.getElementById("envelopeWrap");
+const invitation = document.getElementById("invitation");
+const bookStage = document.getElementById("bookStage");
+
+const pages = [...document.querySelectorAll(".page")];
+const book = document.querySelector(".book");
+const chapterTitles = [
+  "Copertina",
+  "La nostra storia",
+  "Il nostro inizio",
+  "Tanti momenti insieme",
+  "La nostra casa",
+  "Il nostro viaggio",
+  "La proposta",
+  "Il nostro matrimonio",
+  "Tenuta Cartirago",
+  "Countdown",
+  "Itinerario",
+  "RSVP",
+  "Domande frequenti",
+  "Grazie"
+];
+const nextButton = document.getElementById("nextPage");
+const prevButton = document.getElementById("prevPage");
+const counter = document.getElementById("counter");
+
+let currentPage = 0;
+let isTurning = false;
+let soundEnabled = false;
+let audioContext = null;
+let swipeStartX = 0;
+let swipeCurrentX = 0;
+let swipeActive = false;
+let previousCountdownMinute = null;
+
+document.getElementById("continueIntro").addEventListener("click", () => {
+  intro.classList.add("hidden");
+  envelopeStage.classList.remove("hidden");
+});
+
+let sealIsOpening = false;
+
+document.getElementById("seal").addEventListener("click", () => {
+  if (sealIsOpening) return;
+  sealIsOpening = true;
+
+  /* 0.00 — pressione morbida */
+  envelopeWrap.classList.add("wax-v3-press");
+  envelopeWrap.classList.add("breaking");
+
+  /* 0.55 — prima crepa */
+  window.setTimeout(() => {
+    envelopeWrap.classList.add("wax-v3-first-crack");
+    envelopeWrap.classList.add("v4-first-crack");
+  }, 550);
+
+  /* 1.15 — le crepe si propagano */
+  window.setTimeout(() => {
+    envelopeWrap.classList.add("wax-v3-more-cracks");
+    envelopeWrap.classList.add("v4-more-cracks");
+  }, 1150);
+
+  /* 1.85 — il sigillo è spezzato ma resta ancora al suo posto */
+  window.setTimeout(() => {
+    envelopeWrap.classList.add("wax-v3-fractured");
+    envelopeWrap.classList.add("v4-fractured");
+  }, 1850);
+
+  /* 2.45 — i grossi pezzi si staccano e scivolano/cadono */
+  window.setTimeout(() => {
+    envelopeWrap.classList.add("wax-v3-detach");
+    envelopeWrap.classList.add("v4-detach");
+  }, 2450);
+
+  /* 4.45 — SOLO DOPO la caduta della cera si apre il lembo */
+  window.setTimeout(() => {
+    envelopeWrap.classList.add("v4-open");
+    startPetals();
+  }, 4450);
+
+  /* 6.20 — il lembo ha finito di aprirsi e RESTA visibile */
+  window.setTimeout(() => {
+    envelopeWrap.classList.add("v4-open-complete");
+    envelopeWrap.classList.add("v4-hold-open");
+  }, 6200);
+
+  /* 6.45 — la partecipazione emerge dalla busta già aperta */
+  window.setTimeout(() => {
+    invitation.classList.add("show");
+  }, 6450);
+
+  /* 7.65 — la busta resta visibile per un attimo dietro l'invito */
+  window.setTimeout(() => {
+    envelopeWrap.classList.remove("v4-hold-open");
+  }, 7650);
+
+  /* 8.10 — solo ora la scena della busta sfuma lentamente */
+  window.setTimeout(() => {
+    envelopeWrap.classList.add("v4-final-depart");
+    envelopeWrap.style.pointerEvents = "none";
+  }, 8100);
+});
+
+
+function startPetals() {
+  const container = document.getElementById("petals");
+  container.innerHTML = "";
+  container.classList.add("active");
+
+  const total = window.innerWidth < 680 ? 28 : 42;
+
+  for (let i = 0; i < total; i += 1) {
+    const petal = document.createElement("span");
+    petal.className = `petal ${i % 3 === 0 ? "ivory" : ""}`;
+    petal.style.left = `${Math.random() * 100}%`;
+    petal.style.animationDuration = `${4.2 + Math.random() * 4.2}s`;
+    petal.style.animationDelay = `${Math.random() * 1.4}s`;
+    petal.style.setProperty("--drift", `${-70 + Math.random() * 140}px`);
+    petal.style.transform = `scale(${0.55 + Math.random() * 0.9}) rotate(${Math.random() * 180}deg)`;
+    container.appendChild(petal);
+  }
+
+  window.setTimeout(() => {
+    container.classList.remove("active");
+    container.innerHTML = "";
+  }, 8500);
+}
+
+document.getElementById("openBook").addEventListener("click", () => {
+  envelopeStage.classList.add("hidden");
+  bookStage.classList.remove("hidden");
+  pages[currentPage].scrollTop = 0;
+});
+
+function updateControls() {
+  counter.textContent = `${currentPage + 1} / ${pages.length}`;
+  prevButton.classList.toggle("visible", currentPage > 0);
+  nextButton.style.display = currentPage === pages.length - 1 ? "none" : "grid";
+
+  const progress = pages.length > 1 ? (currentPage / (pages.length - 1)) * 100 : 100;
+  document.getElementById("readingProgressBar").style.width = `${progress}%`;
+
+  document.querySelectorAll(".chapter-link").forEach((link, index) => {
+    link.classList.toggle("active", index === currentPage);
+  });
+
+  if (currentPage === pages.length - 1) {
+    launchFinalPetals();
+  }
+
+  if (currentPage === 6) {
+    playWind();
+  }
+}
+
+function goToNextPage() {
+  if (isTurning || currentPage >= pages.length - 1) return;
+
+  isTurning = true;
+  pages[currentPage].classList.remove("current", "turning", "revealed");
+
+  currentPage += 1;
+
+  pages[currentPage].classList.remove("turning", "revealed");
+  pages[currentPage].classList.add("current");
+  pages[currentPage].scrollTop = 0;
+
+  updateControls();
+  isTurning = false;
+}
+
+function goToPreviousPage() {
+  if (isTurning || currentPage <= 0) return;
+
+  isTurning = true;
+  pages[currentPage].classList.remove("current", "turning", "revealed");
+
+  currentPage -= 1;
+
+  pages[currentPage].classList.remove("turning", "revealed");
+  pages[currentPage].classList.add("current");
+  pages[currentPage].scrollTop = 0;
+
+  updateControls();
+  isTurning = false;
+}
+
+nextButton.addEventListener("click", goToNextPage);
+prevButton.addEventListener("click", goToPreviousPage);
+
+document.addEventListener("keydown", (event) => {
+  if (bookStage.classList.contains("hidden")) return;
+
+  if (event.key === "ArrowRight") goToNextPage();
+  if (event.key === "ArrowLeft") goToPreviousPage();
+});
+
+
+
+/* INDICE */
+
+const chapterMenu = document.getElementById("chapterMenu");
+const chapterLinks = document.getElementById("chapterLinks");
+
+chapterTitles.forEach((title, index) => {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "chapter-link";
+  button.innerHTML = `<span>${title}</span><small>${String(index + 1).padStart(2,"0")}</small>`;
+  button.addEventListener("click", () => {
+    if (isTurning || index === currentPage) {
+      chapterMenu.classList.add("hidden");
+      return;
+    }
+
+    pages[currentPage].classList.remove("current","turning","revealed");
+    currentPage = index;
+    pages[currentPage].classList.add("current");
+    pages[currentPage].scrollTop = 0;
+    chapterMenu.classList.add("hidden");
+    playPageTurn();
+    updateControls();
+  });
+  chapterLinks.appendChild(button);
+});
+
+document.getElementById("chapterMenuButton").addEventListener("click", () => {
+  chapterMenu.classList.remove("hidden");
+});
+
+document.getElementById("closeChapterMenu").addEventListener("click", () => {
+  chapterMenu.classList.add("hidden");
+});
+
+chapterMenu.addEventListener("click", event => {
+  if (event.target === chapterMenu) chapterMenu.classList.add("hidden");
+});
+
+/* AUDIO GENERATO DAL BROWSER, SENZA FILE ESTERNI */
+
+function ensureAudioContext(){
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioContext.state === "suspended") audioContext.resume();
+  return audioContext;
+}
+
+function noiseBuffer(duration = .5){
+  const ctx = ensureAudioContext();
+  const buffer = ctx.createBuffer(1, Math.floor(ctx.sampleRate * duration), ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+  for(let i=0;i<data.length;i++){
+    data[i] = (Math.random() * 2 - 1) * (1 - i / data.length);
+  }
+  return buffer;
+}
+
+function playNoise({duration=.45,volume=.08,frequency=900,type="lowpass"} = {}){
+  if(!soundEnabled) return;
+  const ctx = ensureAudioContext();
+  const source = ctx.createBufferSource();
+  const filter = ctx.createBiquadFilter();
+  const gain = ctx.createGain();
+
+  source.buffer = noiseBuffer(duration);
+  filter.type = type;
+  filter.frequency.setValueAtTime(frequency, ctx.currentTime);
+  gain.gain.setValueAtTime(volume, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(.0001, ctx.currentTime + duration);
+
+  source.connect(filter).connect(gain).connect(ctx.destination);
+  source.start();
+}
+
+function playTone(frequency, duration, volume=.04, type="sine"){
+  if(!soundEnabled) return;
+  const ctx = ensureAudioContext();
+  const oscillator = ctx.createOscillator();
+  const gain = ctx.createGain();
+  oscillator.type = type;
+  oscillator.frequency.setValueAtTime(frequency, ctx.currentTime);
+  gain.gain.setValueAtTime(volume, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(.0001, ctx.currentTime + duration);
+  oscillator.connect(gain).connect(ctx.destination);
+  oscillator.start();
+  oscillator.stop(ctx.currentTime + duration);
+}
+
+function playPageTurn(){
+  playNoise({duration:.58,volume:.075,frequency:1250,type:"bandpass"});
+}
+
+function playWaxBreak(){
+  if(!soundEnabled) return;
+  playTone(145,.12,.045,"triangle");
+  window.setTimeout(()=>playNoise({duration:.18,volume:.10,frequency:2100,type:"highpass"}),60);
+  window.setTimeout(()=>playTone(92,.18,.035,"sine"),115);
+}
+
+function playWind(){
+  if(!soundEnabled || currentPage !== 6) return;
+  playNoise({duration:1.65,volume:.032,frequency:520,type:"lowpass"});
+}
+
+const audioToggle = document.getElementById("audioToggle");
+if (audioToggle) audioToggle.addEventListener("click", () => {
+  soundEnabled = !soundEnabled;
+  audioToggle.setAttribute("aria-pressed", String(soundEnabled));
+  audioToggle.innerHTML = soundEnabled ? '♫ <span>Audio</span>' : '♪ <span>Audio</span>';
+  if(soundEnabled){
+    ensureAudioContext();
+    playTone(540,.15,.025,"sine");
+  }
+});
+
+/* DEDICHE INTERATTIVE */
+
+function toggleMemory(buttonId, noteId, sound){
+  const button = document.getElementById(buttonId);
+  const note = document.getElementById(noteId);
+  button.addEventListener("click", () => {
+    const open = note.classList.toggle("show");
+    button.setAttribute("aria-expanded", String(open));
+    if(open && sound === "wind") playWind();
+    if(open && sound === "key") {
+      playTone(760,.12,.025,"sine");
+      window.setTimeout(()=>playTone(1040,.16,.018,"sine"),90);
+    }
+  });
+}
+
+toggleMemory("homeKeyTrigger","homeDedication","key");
+toggleMemory("proposalRingTrigger","proposalSecret","wind");
+
+/* SWIPE CON IL DITO */
+
+book.addEventListener("pointerdown", event => {
+  if(event.target.closest("button,input,select,textarea,a")) return;
+  swipeStartX = event.clientX;
+  swipeCurrentX = event.clientX;
+  swipeActive = true;
+  book.classList.add("swiping");
+  book.setPointerCapture?.(event.pointerId);
+});
+
+book.addEventListener("pointermove", event => {
+  if(!swipeActive) return;
+  swipeCurrentX = event.clientX;
+  const delta = Math.max(-130,Math.min(130,swipeCurrentX - swipeStartX));
+});
+
+function finishSwipe(){
+  if(!swipeActive) return;
+  const delta = swipeCurrentX - swipeStartX;
+  swipeActive = false;
+  book.classList.remove("swiping");
+  book.style.removeProperty("--swipe-x");
+
+  if(delta < -55) goToNextPage();
+  if(delta > 55) goToPreviousPage();
+}
+
+book.addEventListener("pointerup",finishSwipe);
+book.addEventListener("pointercancel",finishSwipe);
+
+/* PETALI FINALI */
+
+let finalPetalsLaunched = false;
+function launchFinalPetals(){
+  if(finalPetalsLaunched) return;
+  finalPetalsLaunched = true;
+  const container = document.getElementById("finalPetals");
+  if(!container) return;
+
+  for(let i=0;i<34;i++){
+    const petal = document.createElement("span");
+    petal.className = "final-petal";
+    petal.style.left = `${Math.random()*100}%`;
+    petal.style.animationDuration = `${4.5 + Math.random()*4}s`;
+    petal.style.animationDelay = `${Math.random()*2}s`;
+    petal.style.setProperty("--final-drift",`${-80 + Math.random()*160}px`);
+    petal.style.transform = `scale(${.55 + Math.random()*.85}) rotate(${Math.random()*180}deg)`;
+    container.appendChild(petal);
+  }
+}
+
+/* Countdown: bagliore quando cambia il minuto */
+
+
+/* DECORAZIONI BOTANICHE REALISTICHE — le pagine restano HTML e interattive */
+(function addRealisticBotanicals(){
+  const stationeryPages = [...document.querySelectorAll(".page-inner.stationery")];
+
+  const layouts = [
+    ["foglie-a.png","top-left","rosa-a.png","bottom-right"],
+    ["foglie-b.png","top-right","rosa-b.png","bottom-left"],
+    ["foglie-c.png","bottom-left","rosa-c.png","top-right"],
+    ["foglie-a.png","bottom-right","rosa-d.png","top-left"],
+    ["foglie-b.png","top-left","rosa-a.png","bottom-right"],
+    ["foglie-c.png","top-right","rosa-b.png","bottom-left"],
+    ["foglie-a.png","bottom-left","rosa-c.png","top-right"],
+    ["foglie-b.png","bottom-right","rosa-d.png","top-left"],
+    ["foglie-c.png","top-left","rosa-a.png","bottom-right"],
+    ["foglie-a.png","top-right","rosa-b.png","bottom-left"],
+    ["foglie-b.png","bottom-left","rosa-c.png","top-right"],
+    ["foglie-c.png","bottom-right","rosa-d.png","top-left"]
+  ];
+
+  stationeryPages.forEach((page,index)=>{
+    const layout = layouts[index % layouts.length];
+
+    const leaf = document.createElement("img");
+    leaf.src = layout[0];
+    leaf.alt = "";
+    leaf.setAttribute("aria-hidden","true");
+    leaf.className = `real-botanical leaf ${layout[1]}`;
+
+    const rose = document.createElement("img");
+    rose.src = layout[2];
+    rose.alt = "";
+    rose.setAttribute("aria-hidden","true");
+    rose.className = `real-botanical rose ${layout[3]}`;
+
+    page.prepend(rose);
+    page.prepend(leaf);
+  });
+})();
+
+
+const invitationZoom = document.getElementById("invitationImageZoom");
+const closeInvitationZoom = document.getElementById("closeInvitationZoom");
+const invitationCoverImage = null; /* partecipazione ora costruita in HTML */
+
+if(invitationCoverImage && invitationZoom && closeInvitationZoom){
+  invitationCoverImage.addEventListener("click", () => {
+    if(window.matchMedia("(max-width:680px)").matches){
+      invitationZoom.classList.add("show");
+      invitationZoom.setAttribute("aria-hidden","false");
+    }
+  });
+
+  closeInvitationZoom.addEventListener("click", () => {
+    invitationZoom.classList.remove("show");
+    invitationZoom.setAttribute("aria-hidden","true");
+  });
+
+  invitationZoom.addEventListener("click", (event) => {
+    if(event.target === invitationZoom){
+      invitationZoom.classList.remove("show");
+      invitationZoom.setAttribute("aria-hidden","true");
+    }
+  });
+}
+
+
+/* Il nuovo pulsante HTML usa esattamente il flusso già esistente del sito. */
+const liveOpenInvitation = document.getElementById("liveOpenInvitation");
+if(liveOpenInvitation){
+  liveOpenInvitation.addEventListener("click", (event)=>{
+    event.preventDefault();
+    event.stopPropagation();
+    const oldOpenControl = document.querySelector(".invitation-new-cover-button");
+    if(oldOpenControl){
+      oldOpenControl.click();
+    }
+  });
+}
+
+
+
+
+
+/* RSVP: raccoglie nome e cognome di TUTTE le persone che verranno */
+(function setupAttendeeNames(){
+  const peopleSelect = document.getElementById("persone");
+  const presenceSelect = document.getElementById("presenza");
+  const fieldset = document.getElementById("guestNamesFieldset");
+  const rows = [...document.querySelectorAll(".guest-name-row")];
+
+  if(!peopleSelect || !presenceSelect || !fieldset || !rows.length) return;
+
+  function isAttending(){
+    return !presenceSelect.value.toLowerCase().startsWith("no");
+  }
+
+  function updateAttendeeFields(){
+    const attending = isAttending();
+    const count = Math.max(1, Math.min(5, parseInt(peopleSelect.value || "1", 10)));
+
+    fieldset.classList.toggle("not-attending", !attending);
+
+    rows.forEach(row => {
+      const guestNumber = parseInt(row.dataset.guest, 10);
+      const input = row.querySelector("input");
+      const show = attending && guestNumber <= count;
+
+      row.classList.toggle("hidden", !show);
+
+      if(input){
+        input.required = show;
+        if(!show) input.value = "";
+      }
+    });
+  }
+
+  peopleSelect.addEventListener("change", updateAttendeeFields);
+  presenceSelect.addEventListener("change", updateAttendeeFields);
+  updateAttendeeFields();
+})();
+
+
+/* CAMPIONE INTERATTIVO — IL NOSTRO INIZIO */
+(function setupFairytaleStartPage(){
+  const photo = document.getElementById("fairytaleStartPhoto");
+  const noteButton = document.getElementById("fairytaleStartNote");
+  const secret = document.getElementById("fairytaleSecretNote");
+
+  if(photo){
+    photo.addEventListener("click", () => {
+      photo.classList.toggle("photo-awake");
+    });
+  }
+
+  if(noteButton && secret){
+    noteButton.addEventListener("click", () => {
+      const open = secret.classList.toggle("show");
+      noteButton.setAttribute("aria-expanded", String(open));
+    });
+  }
+})();
+
+
+/* CAMPIONE 2 INTERATTIVO — TANTI MOMENTI INSIEME */
+(function setupMomentsFairytalePage(){
+  const photo = document.getElementById("momentsMainPhoto");
+  const ticket = document.getElementById("momentsMemoryTicket");
+  const memory = document.getElementById("momentsHiddenMemory");
+
+  if(photo){
+    photo.addEventListener("click", () => {
+      photo.classList.toggle("memory-awake");
+    });
+  }
+
+  if(ticket && memory){
+    ticket.addEventListener("click", () => {
+      const open = memory.classList.toggle("show");
+      ticket.setAttribute("aria-expanded", String(open));
+    });
+  }
+})();
+
+const weddingDate = new Date("2027-09-03T00:00:00+02:00");
+
+function updateWeddingCountdown() {
+  const now = new Date();
+  const difference = weddingDate.getTime() - now.getTime();
+
+  const dayNode = document.getElementById("countDays");
+  const hourNode = document.getElementById("countHours");
+  const minuteNode = document.getElementById("countMinutes");
+  const secondNode = document.getElementById("countSeconds");
+  const noteNode = document.getElementById("countdownNote");
+
+  if (!dayNode || !hourNode || !minuteNode || !secondNode) return;
+
+  if (difference <= 0) {
+    dayNode.textContent = "000";
+    hourNode.textContent = "00";
+    minuteNode.textContent = "00";
+    secondNode.textContent = "00";
+    if (noteNode) noteNode.textContent = "Il nostro giorno è arrivato. ♡";
+    return;
+  }
+
+  const totalSeconds = Math.floor(difference / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  if(previousCountdownMinute !== null && previousCountdownMinute !== minutes){
+    const countdownBox = document.getElementById("weddingCountdown");
+    countdownBox.classList.remove("minute-glow");
+    void countdownBox.offsetWidth;
+    countdownBox.classList.add("minute-glow");
+  }
+  previousCountdownMinute = minutes;
+
+  dayNode.textContent = String(days).padStart(3, "0");
+  hourNode.textContent = String(hours).padStart(2, "0");
+  minuteNode.textContent = String(minutes).padStart(2, "0");
+  secondNode.textContent = String(seconds).padStart(2, "0");
+}
+
+updateWeddingCountdown();
+window.setInterval(updateWeddingCountdown, 1000);
+
+const rsvpForm = document.getElementById("rsvpForm");
+const rsvpSubmit = document.getElementById("rsvpSubmit");
+const confirmation = document.getElementById("confirmation");
+
+rsvpForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  confirmation.style.display = "none";
+  confirmation.textContent = "";
+  confirmation.style.color = "";
+
+  const originalButtonText = rsvpSubmit.textContent;
+  rsvpSubmit.disabled = true;
+  rsvpSubmit.textContent = "Invio in corso…";
+
+  try {
+    const response = await fetch(rsvpForm.action, {
+      method: "POST",
+      body: new FormData(rsvpForm),
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("Invio non riuscito");
+    }
+
+    confirmation.textContent = "Grazie! La vostra risposta è stata ricevuta. ♡";
+    confirmation.style.color = "var(--sage-dark)";
+    confirmation.style.display = "block";
+    rsvpForm.reset();
+  } catch (error) {
+    confirmation.textContent = "Non siamo riusciti a inviare la risposta. Riprova tra poco.";
+    confirmation.style.color = "#8b4f4f";
+    confirmation.style.display = "block";
+  } finally {
+    rsvpSubmit.disabled = false;
+    rsvpSubmit.textContent = originalButtonText;
+  }
+});
+
+document.getElementById("restart").addEventListener("click", () => {
+  envelopeWrap.style.pointerEvents = "auto";
+  envelopeWrap.style.opacity = "1";
+  envelopeWrap.classList.remove("breaking","opening","depart","cracking","shattered","flap-opening","wax-v3-press","wax-v3-first-crack","wax-v3-more-cracks","wax-v3-fractured","wax-v3-detach","wax-v3-open","v4-first-crack","v4-more-cracks","v4-fractured","v4-detach","v4-open","v4-open-complete","v4-hold-open","v4-final-depart");
+  invitation.classList.remove("show");
+  sealIsOpening = false;
+  pages.forEach((page, index) => {
+    page.className = index === 0 ? "page current" : "page";
+    page.scrollTop = 0;
+  });
+
+  currentPage = 0;
+  finalPetalsLaunched = false;
+  const finalPetalContainer = document.getElementById("finalPetals");
+  if(finalPetalContainer) finalPetalContainer.innerHTML = "";
+  updateControls();
+});
+
+updateControls();
+
+  </script>
+<script>
+
+/* =========================================================
+   STILE VIDEO V1 — MOBILE SCROLL EXPERIENCE
+   ========================================================= */
+(function setupVideoStyleMobile(){
+  const mobileQuery = window.matchMedia("(max-width:720px)");
+  const bookStage = document.getElementById("bookStage");
+  const nav = document.getElementById("mobileWeddingNav");
+  const progress = document.getElementById("mobileScrollProgress");
+  const allPages = [...document.querySelectorAll(".book > .page")];
+
+  function titleForPage(page){
+    const title =
+      page.querySelector(".page-title")?.textContent?.trim() ||
+      page.querySelector(".display-title")?.textContent?.trim() ||
+      "";
+    return title.replace(/\s+/g," ");
+  }
+
+  function findPageByTitle(fragment){
+    const target = fragment.toLowerCase();
+    return allPages.find(page => titleForPage(page).toLowerCase().includes(target));
+  }
+
+  function enableMobile(){
+    if(!mobileQuery.matches || !bookStage) return;
+
+    /* Tutte le pagine devono essere presenti nello scroll */
+    allPages.forEach((page,index) => {
+      page.dataset.mobileIndex = index;
+      page.classList.remove("turning","revealed");
+      page.classList.add("mobile-reveal");
+    });
+
+    /* Prima pagina subito visibile */
+    if(allPages[0]) allPages[0].classList.add("mobile-visible");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("mobile-visible");
+        }
+      });
+    }, {threshold:.13, rootMargin:"0px 0px -7% 0px"});
+
+    allPages.forEach(page => observer.observe(page));
+
+    function updateScroll(){
+      const doc = document.documentElement;
+      const max = Math.max(1, doc.scrollHeight - window.innerHeight);
+      const pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+      if(progress) progress.style.width = pct + "%";
+
+      /* Evidenziazione approssimativa della nav */
+      if(!nav) return;
+      const buttons = [...nav.querySelectorAll("button")];
+      buttons.forEach(b => b.classList.remove("active"));
+
+      const center = window.innerHeight * .48;
+      let closest = null;
+      let dist = Infinity;
+      allPages.forEach(page => {
+        const r = page.getBoundingClientRect();
+        const d = Math.abs((r.top + Math.min(r.height,window.innerHeight)/2) - center);
+        if(d < dist){dist=d;closest=page}
+      });
+
+      if(!closest) return;
+      const title = titleForPage(closest).toLowerCase();
+      if(title.includes("tenuta")) buttons[2]?.classList.add("active");
+      else if(title.includes("invitato")) buttons[3]?.classList.add("active");
+      else if(title.includes("prossimo capitolo")) buttons[1]?.classList.add("active");
+      else buttons[0]?.classList.add("active");
+    }
+
+    window.addEventListener("scroll", updateScroll, {passive:true});
+    updateScroll();
+
+    if(nav && nav.dataset.ready !== "1"){
+      nav.dataset.ready = "1";
+      nav.addEventListener("click", e => {
+        const btn = e.target.closest("button");
+        if(!btn) return;
+
+        let targetPage = null;
+        if(btn.dataset.scrollPage){
+          targetPage = allPages[Number(btn.dataset.scrollPage)];
+        } else if(btn.dataset.scrollTitle){
+          targetPage = findPageByTitle(btn.dataset.scrollTitle);
+        }
+
+        if(targetPage){
+          targetPage.scrollIntoView({behavior:"smooth", block:"start"});
+        }
+      });
+    }
+  }
+
+  function initWhenBookShows(){
+    if(!mobileQuery.matches) return;
+    const watcher = new MutationObserver(() => {
+      if(bookStage && !bookStage.classList.contains("hidden")){
+        enableMobile();
+      }
+    });
+    if(bookStage) watcher.observe(bookStage,{attributes:true,attributeFilter:["class"]});
+    if(bookStage && !bookStage.classList.contains("hidden")) enableMobile();
+  }
+
+  initWhenBookShows();
+})();
+
+</script>
+<script>
+
+/* APERTURA STILE VIDEO V2 */
+(function(){
+  const intro = document.getElementById("videoStyleOpening");
+  const seal = document.getElementById("openingWaxSeal");
+  const hint = document.getElementById("openingHint");
+  if(!intro || !seal) return;
+
+  let opening = false;
+
+  function openInvitation(){
+    if(opening) return;
+    opening = true;
+
+    /* tactile press */
+    intro.classList.add("press");
+
+    /* seal releases */
+    setTimeout(() => {
+      intro.classList.add("break-seal");
+    }, 420);
+
+    /* flap opens only after the seal has released */
+    setTimeout(() => {
+      intro.classList.add("open-envelope");
+    }, 1050);
+
+    /* transition to the existing site's original experience */
+    setTimeout(() => {
+      intro.classList.add("finished");
+    }, 3050);
+
+    setTimeout(() => {
+      intro.remove();
+    }, 4150);
+  }
+
+  seal.addEventListener("click", openInvitation);
+  if(hint) hint.addEventListener("click", openInvitation);
+})();
+
+</script>
+</body>
+</html>
+```
