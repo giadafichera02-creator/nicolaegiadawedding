@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="wedding-site-version" content="apertura-realistica-salvia-v3">
+  <meta name="wedding-site-version" content="apertura-interattiva-a-livelli-v1">
   <title>Nicola ♡ Giada — The Wedding Book</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -6450,108 +6450,232 @@ button{touch-action:manipulation}
 
 </style>
 
-<style id="ng-photo-approved-style">
-/* Apertura fotografica: usa direttamente la grafica approvata come asset visivo.
-   Il Wedding Book sottostante non viene modificato. */
-.ng-photo-opening{
-  position:fixed!important; inset:0!important; z-index:50000!important;
-  display:grid!important; place-items:center!important; overflow:hidden!important;
+<style id="layered-realistic-opening-css">
+/* =========================================================
+   APERTURA FOTOREALISTICA A LIVELLI
+   Gli oggetti sono separati: base, fronte, lembo, sigillo,
+   frammenti e cartoncino.
+   ========================================================= */
+.layered-opening{
+  position:fixed; inset:0; z-index:60000; overflow:hidden;
+  display:grid; place-items:center;
+  background:#f7f2e9;
+  transition:opacity .9s ease,visibility .9s ease,filter .9s ease;
+}
+.layered-opening.leave{
+  opacity:0; visibility:hidden; pointer-events:none; filter:blur(2px);
+}
+.layered-paper-bg{
+  position:absolute; inset:0;
   background:
-    radial-gradient(circle at 50% 42%,#fffdf8 0,#f7f1e7 58%,#e8dfd1 100%)!important;
-  opacity:1; visibility:visible;
-  transition:opacity .9s ease, visibility .9s ease;
+    radial-gradient(circle at 50% 43%,rgba(255,255,255,.98),rgba(248,243,234,.92) 55%,rgba(232,223,210,.94)),
+    repeating-linear-gradient(3deg,rgba(105,86,62,.018) 0 1px,transparent 1px 4px);
 }
-.ng-photo-opening.ng-photo-leave{opacity:0;visibility:hidden;pointer-events:none}
-.ng-photo-stage{
-  position:relative;
-  width:min(96vw,1500px);
-  aspect-ratio:1000/388;
-  filter:drop-shadow(0 24px 28px rgba(73,60,42,.15));
-  transform:translateZ(0);
+.layered-floral{
+  position:absolute; z-index:2; width:min(27vw,350px);
+  opacity:.95; pointer-events:none; mix-blend-mode:multiply;
 }
-.ng-photo-state{
-  position:absolute; inset:0; width:100%; height:100%;
-  object-fit:contain; user-select:none; pointer-events:none;
+.floral-tl{left:0;top:0}.floral-tr{right:0;top:0}
+.floral-bl{left:0;bottom:0}.floral-br{right:0;bottom:0}
+
+.layered-title{
+  position:absolute; z-index:8; top:4.5vh; left:50%;
+  transform:translateX(-50%); width:min(92vw,760px); text-align:center;
 }
-.ng-photo-closed{z-index:1;opacity:1;transition:opacity 1.15s ease,filter 1.15s ease,transform 1.15s ease}
-.ng-photo-opened{z-index:2;opacity:0;transform:scale(.985);filter:blur(1px);
-  transition:opacity 1.55s ease,transform 1.8s cubic-bezier(.18,.72,.18,1),filter 1.4s ease}
-.ng-photo-seal-hit{
-  position:absolute; z-index:5; left:50%; top:58%;
-  width:13%; aspect-ratio:1; transform:translate(-50%,-50%);
-  border:0; border-radius:50%; background:transparent; cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
+.layered-title h1{
+  margin:0; color:#68705d; font:400 clamp(54px,7vw,86px)/.9 "Allura",cursive;
 }
-.ng-photo-seal-hit::before{
-  content:""; position:absolute; inset:8%; border-radius:50%;
-  box-shadow:0 0 0 0 rgba(255,255,255,0);
-  transition:transform .45s ease,filter .45s ease;
+.layered-title h1 span{
+  color:#b18c50; font-family:"Cormorant Garamond",serif;
+  font-size:.55em; vertical-align:.18em;
 }
-.ng-photo-opening.ng-photo-press .ng-photo-seal-hit::before{
-  transform:scale(.88); filter:brightness(.92);
+.layered-title>b{
+  display:block; margin-top:7px; color:#b18c50;
+  font:400 20px "Cormorant Garamond",serif;
 }
-.ng-photo-crack{
-  position:absolute; left:50%; top:50%; width:2px; height:0;
-  opacity:0; transform-origin:top; background:rgba(73,51,28,.86);
-  box-shadow:0 0 1px rgba(255,255,255,.5);
+.layered-title p{
+  margin:5px 0 0; color:#6f7567;
+  font:500 13px "Cormorant Garamond",serif; letter-spacing:.23em;
 }
-.cr1{transform:rotate(12deg)} .cr2{transform:rotate(96deg)}
-.cr3{transform:rotate(196deg)} .cr4{transform:rotate(292deg)}
-.ng-photo-opening.ng-photo-crack1 .cr1{animation:photoCrack .55s ease-out forwards}
-.ng-photo-opening.ng-photo-cracks .cr2,
-.ng-photo-opening.ng-photo-cracks .cr3,
-.ng-photo-opening.ng-photo-cracks .cr4{animation:photoCrack .72s ease-out forwards}
-@keyframes photoCrack{to{height:47%;opacity:1}}
-.ng-photo-opening.ng-photo-break .ng-photo-seal-hit{
-  animation:photoSealBreak .75s cubic-bezier(.2,.7,.2,1) forwards;
+
+.layered-scene{
+  position:absolute; z-index:6; left:50%; top:57%;
+  width:min(86vw,1040px); aspect-ratio:900/635;
+  transform:translate(-50%,-50%); perspective:1900px;
 }
-@keyframes photoSealBreak{
+.layered-shadow{
+  position:absolute; z-index:0; left:7%; right:7%; bottom:4%; height:13%;
+  border-radius:50%; background:rgba(61,50,36,.22); filter:blur(22px);
+}
+.layered-envelope{
+  position:absolute; inset:0; transform-style:preserve-3d;
+}
+.layer{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:contain;
+  pointer-events:none; user-select:none;
+}
+.base-open{z-index:1}
+.front-real{z-index:8}
+.flap-real{
+  z-index:11; transform-origin:50% 4%;
+  transform:perspective(1900px) rotateX(0deg);
+  backface-visibility:visible;
+  filter:drop-shadow(0 8px 5px rgba(52,48,38,.16));
+}
+
+/* Carta come vero elemento indipendente che sale dall'interno */
+.layered-card{
+  position:absolute; z-index:5; left:13%; right:13%; top:19%; height:66%;
+  opacity:0; transform:translateY(45%) scale(.96);
+}
+.layered-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+.layered-card-copy{
+  position:absolute; inset:8% 10%; display:flex; align-items:center;
+  justify-content:center; flex-direction:column; text-align:center;
+  color:#67705d;
+}
+.layered-card-copy .sprig{font-size:27px;transform:rotate(-17deg);opacity:.75}
+.layered-card-copy h2{
+  margin:0; font:400 clamp(46px,5.7vw,72px)/.9 "Allura",cursive;
+}
+.layered-card-copy small{
+  margin-top:6px; color:#887e6d; font-size:9px; letter-spacing:.28em;
+}
+.layered-card-copy h3{
+  margin:2px 0 0; font:500 clamp(22px,2.6vw,31px) "Cormorant Garamond",serif;
+  letter-spacing:.20em;
+}
+.card-rule{display:flex;align-items:center;gap:10px;width:160px;margin:9px auto 6px;color:#b48d4c}
+.card-rule i{flex:1;height:1px;background:linear-gradient(90deg,transparent,#b48d4c)}
+.card-rule i:last-child{background:linear-gradient(90deg,#b48d4c,transparent)}
+.card-rule b{font-weight:400}
+.layered-card-copy p{margin:0;font:500 14px "Cormorant Garamond";letter-spacing:.17em}
+.layered-card-copy em{margin-top:3px;color:#837b70;font:normal 10px "Lora";letter-spacing:.08em}
+.layered-card-copy button{
+  margin-top:16px; min-height:43px; padding:9px 21px; border:1px solid rgba(93,103,82,.35);
+  border-radius:3px; color:#fffaf1; background:#7f886f;
+  box-shadow:0 8px 18px rgba(65,73,57,.18); cursor:pointer;
+  font:500 10px "Cormorant Garamond"; letter-spacing:.14em; text-transform:uppercase;
+  opacity:0; pointer-events:none; transform:translateY(7px);
+}
+
+/* Sigillo vero, fotografico */
+.layered-seal{
+  position:absolute; z-index:20; left:50%; top:53%;
+  width:23.5%; aspect-ratio:1; transform:translate(-50%,-50%);
+  border:0; border-radius:50%; background:transparent; padding:0;
+  cursor:pointer; -webkit-tap-highlight-color:transparent;
+}
+.seal-whole{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 8px rgba(54,46,34,.24))}
+.real-crack{
+  position:absolute; z-index:3; left:50%; top:50%; width:2px; height:0;
+  opacity:0; background:rgba(74,53,31,.92); transform-origin:top;
+  box-shadow:0 0 1px rgba(255,255,255,.45);
+}
+.rc1{transform:rotate(15deg)}.rc2{transform:rotate(102deg)}
+.rc3{transform:rotate(202deg)}.rc4{transform:rotate(298deg)}
+
+/* Frammenti fotografici reali */
+.real-fragments{
+  position:absolute; z-index:22; left:50%; top:53%;
+  width:23.5%; aspect-ratio:1; transform:translate(-50%,-50%);
+  pointer-events:none; opacity:0;
+}
+.rf{
+  position:absolute; left:50%; top:50%; max-width:72%; max-height:72%;
+  transform:translate(-50%,-50%); opacity:0;
+  filter:drop-shadow(0 7px 6px rgba(48,39,29,.25));
+}
+
+/* Stati fisici */
+.layered-opening.press .layered-seal{
+  animation:layerPress .62s cubic-bezier(.22,.72,.2,1) forwards;
+}
+@keyframes layerPress{
   0%{transform:translate(-50%,-50%) scale(1)}
-  45%{transform:translate(-50%,-50%) scale(.92)}
-  100%{transform:translate(-50%,-50%) scale(1.05)}
+  52%{transform:translate(-50%,-50%) scale(.91)}
+  100%{transform:translate(-50%,-50%) scale(.985)}
 }
-.ng-photo-opening.ng-photo-open .ng-photo-closed{
-  opacity:0; transform:scale(1.012); filter:blur(1.2px)
+.layered-opening.crack1 .rc1{animation:growRealCrack .48s ease-out forwards}
+.layered-opening.cracks .rc2,
+.layered-opening.cracks .rc3,
+.layered-opening.cracks .rc4{animation:growRealCrack .62s ease-out forwards}
+@keyframes growRealCrack{to{height:43%;opacity:.95}}
+
+.layered-opening.broken .seal-whole,
+.layered-opening.broken .real-crack{opacity:0;transition:opacity .15s linear}
+.layered-opening.broken .real-fragments{opacity:1}
+.layered-opening.broken .rf{opacity:1}
+.layered-opening.broken .rf1{animation:realFall1 1.55s cubic-bezier(.2,.55,.28,1) forwards}
+.layered-opening.broken .rf2{animation:realFall2 1.62s cubic-bezier(.2,.55,.28,1) .05s forwards}
+.layered-opening.broken .rf3{animation:realFall3 1.69s cubic-bezier(.2,.55,.28,1) .08s forwards}
+.layered-opening.broken .rf4{animation:realFall4 1.60s cubic-bezier(.2,.55,.28,1) .11s forwards}
+@keyframes realFall1{
+  0%{transform:translate(-50%,-50%) rotate(0)}
+  28%{transform:translate(-90%,-72%) rotate(-8deg)}
+  100%{transform:translate(-170%,170%) rotate(-62deg)}
 }
-.ng-photo-opening.ng-photo-open .ng-photo-opened{
-  opacity:1; transform:scale(1); filter:blur(0)
+@keyframes realFall2{
+  0%{transform:translate(-50%,-50%) rotate(0)}
+  28%{transform:translate(-6%,-72%) rotate(8deg)}
+  100%{transform:translate(100%,185%) rotate(67deg)}
 }
-.ng-photo-openbook-hit{
-  position:absolute; z-index:8;
-  left:72.5%; top:69%; width:22%; height:11%;
-  border:0; background:transparent; cursor:pointer;
-  opacity:0; pointer-events:none; border-radius:6px;
+@keyframes realFall3{
+  0%{transform:translate(-50%,-50%) rotate(0)}
+  28%{transform:translate(-7%,-5%) rotate(-5deg)}
+  100%{transform:translate(72%,225%) rotate(-88deg)}
 }
-.ng-photo-opening.ng-photo-open .ng-photo-openbook-hit{
-  opacity:1; pointer-events:auto;
+@keyframes realFall4{
+  0%{transform:translate(-50%,-50%) rotate(0)}
+  28%{transform:translate(-91%,-4%) rotate(7deg)}
+  100%{transform:translate(-182%,215%) rotate(82deg)}
 }
-.ng-photo-opening.ng-photo-open .ng-photo-seal-hit{pointer-events:none;opacity:0}
+
+.layered-opening.opening .flap-real{
+  animation:realLayerFlap 1.8s cubic-bezier(.18,.68,.18,1) forwards;
+}
+@keyframes realLayerFlap{
+  0%{transform:perspective(1900px) rotateX(0deg)}
+  25%{transform:perspective(1900px) rotateX(-24deg)}
+  60%{transform:perspective(1900px) rotateX(-102deg)}
+  100%{transform:perspective(1900px) rotateX(-174deg);filter:brightness(.92) drop-shadow(0 4px 5px rgba(52,48,38,.10))}
+}
+.layered-opening.opening .layered-card{
+  animation:realCardRise 1.65s .72s cubic-bezier(.18,.72,.18,1) forwards;
+}
+@keyframes realCardRise{
+  0%{transform:translateY(45%) scale(.96);opacity:0}
+  24%{opacity:1}
+  100%{transform:translateY(-19%) scale(1);opacity:1}
+}
+.layered-opening.opening .layered-card-copy button{
+  animation:realButtonIn .55s 1.95s ease forwards;
+}
+@keyframes realButtonIn{to{opacity:1;pointer-events:auto;transform:none}}
+.layered-opening.opening .layered-seal{pointer-events:none}
+.layered-opening.opening .layered-hint{opacity:0;pointer-events:none}
+
+.layered-hint{
+  position:absolute; z-index:25; left:50%; bottom:-5%;
+  transform:translateX(-50%); border:0; background:transparent; cursor:pointer;
+  color:#68705d; white-space:nowrap;
+}
+.layered-hint span{font:400 clamp(20px,2.1vw,30px) "Allura",cursive}
+.layered-hint b{display:block;margin-top:0;color:#ad8a50;font:400 22px "Cormorant Garamond"}
 
 @media(max-width:720px){
-  .ng-photo-stage{
-    width:100vw; height:100vh; aspect-ratio:auto;
-    filter:none;
-  }
-  .ng-photo-state{
-    object-fit:cover;
-    object-position:center;
-    transform-origin:center;
-  }
-  /* The approved desktop composition is enlarged on phone so the envelope remains the hero. */
-  .ng-photo-closed,.ng-photo-opened{
-    width:178vw; max-width:none; height:auto;
-    left:50%; top:50%; inset:auto;
-    transform:translate(-50%,-50%);
-  }
-  .ng-photo-opened{opacity:0;filter:blur(1px)}
-  .ng-photo-opening.ng-photo-open .ng-photo-closed{
-    transform:translate(-50%,-50%) scale(1.015); opacity:0
-  }
-  .ng-photo-opening.ng-photo-open .ng-photo-opened{
-    transform:translate(-50%,-50%) scale(1); opacity:1; filter:none
-  }
-  .ng-photo-seal-hit{left:50%;top:58%;width:23vw}
-  .ng-photo-openbook-hit{left:50%;top:69%;width:42vw;height:9vh;transform:translateX(-50%)}
+  .layered-title{top:5vh}
+  .layered-title h1{font-size:clamp(48px,15vw,68px);white-space:nowrap}
+  .layered-scene{top:57%;width:118vw;max-width:none}
+  .layered-floral{width:44vw}
+  .floral-bl,.floral-br{bottom:-2vh}
+  .layered-seal,.real-fragments{width:25%}
+  .layered-card-copy h2{font-size:43px}
+  .layered-card-copy h3{font-size:20px}
+  .layered-card-copy p{font-size:12px}
+  .layered-card-copy em{font-size:9px}
+  .layered-hint{bottom:-8%;width:86vw}
+  .layered-hint span{font-size:23px}
 }
 </style>
 
@@ -6560,22 +6684,71 @@ button{touch-action:manipulation}
 
 <body>
   
-<section class="ng-opening ng-photo-opening" id="ngOpening" aria-label="Invito al matrimonio di Nicola e Giada">
-  <div class="ng-photo-stage">
-    <img class="ng-photo-state ng-photo-closed" src="apertura-chiusa.png" alt="">
-    <img class="ng-photo-state ng-photo-opened" src="apertura-aperta.png" alt="">
+<section class="layered-opening" id="layeredOpening" aria-label="Invito al matrimonio di Nicola e Giada">
+  <div class="layered-paper-bg" aria-hidden="true"></div>
 
-    <button class="ng-photo-seal-hit" id="ngSeal" type="button" aria-label="Tocca il sigillo per aprire">
-      <span class="ng-photo-crack cr1"></span>
-      <span class="ng-photo-crack cr2"></span>
-      <span class="ng-photo-crack cr3"></span>
-      <span class="ng-photo-crack cr4"></span>
+  <img class="layered-floral floral-tl" src="fiori-alto-sx.png" alt="" aria-hidden="true">
+  <img class="layered-floral floral-tr" src="fiori-alto-dx.png" alt="" aria-hidden="true">
+  <img class="layered-floral floral-bl" src="fiori-basso-sx.png" alt="" aria-hidden="true">
+  <img class="layered-floral floral-br" src="fiori-basso-dx.png" alt="" aria-hidden="true">
+
+  <header class="layered-title">
+    <h1>Nicola <span>&amp;</span> Giada</h1>
+    <b>♡</b>
+    <p>03 · 09 · 2027</p>
+  </header>
+
+  <div class="layered-scene" id="layeredScene">
+    <div class="layered-shadow" aria-hidden="true"></div>
+
+    <div class="layered-envelope">
+      <!-- VERO sfondo aperto, sempre sotto -->
+      <img class="layer base-open" src="busta-base-aperta.png" alt="" aria-hidden="true">
+
+      <!-- Il cartoncino è un oggetto indipendente -->
+      <div class="layered-card" id="layeredCard">
+        <img src="cartoncino-avorio-reale.png" alt="" aria-hidden="true">
+        <div class="layered-card-copy">
+          <span class="sprig">❧</span>
+          <h2>Sei invitato</h2>
+          <small>AL NOSTRO</small>
+          <h3>MATRIMONIO</h3>
+          <div class="card-rule"><i></i><b>♡</b><i></i></div>
+          <p>03 · 09 · 2027</p>
+          <em>Tenuta Cartirago · Rovigo</em>
+          <button id="layeredOpenBook" type="button">Apri il nostro invito</button>
+        </div>
+      </div>
+
+      <!-- Fronte reale della busta -->
+      <img class="layer front-real" src="fronte-busta-reale.png" alt="" aria-hidden="true">
+
+      <!-- Lembo reale: questo elemento ruota, non viene sostituito da una foto -->
+      <img class="layer flap-real" src="lembo-chiuso-reale.png" alt="" aria-hidden="true">
+
+      <!-- Sigillo fotografico -->
+      <button class="layered-seal" id="layeredSeal" type="button" aria-label="Rompi il sigillo">
+        <img class="seal-whole" src="sigillo-reale.png" alt="">
+        <span class="real-crack rc1"></span>
+        <span class="real-crack rc2"></span>
+        <span class="real-crack rc3"></span>
+        <span class="real-crack rc4"></span>
+      </button>
+
+      <!-- Frammenti reali e separati -->
+      <div class="real-fragments" aria-hidden="true">
+        <img class="rf rf1" src="sigillo-frammento-1.png" alt="">
+        <img class="rf rf2" src="sigillo-frammento-2.png" alt="">
+        <img class="rf rf3" src="sigillo-frammento-3.png" alt="">
+        <img class="rf rf4" src="sigillo-frammento-4.png" alt="">
+      </div>
+    </div>
+
+    <button class="layered-hint" id="layeredHint" type="button">
+      <span>Tocca il sigillo per aprire</span><b>⌄</b>
     </button>
-
-    <button class="ng-photo-openbook-hit" id="ngOpenBook" type="button" aria-label="Apri il nostro invito"></button>
   </div>
 </section>
-
 
 <section class="screen intro" id="intro">
   <div class="intro-light"></div>
@@ -8210,11 +8383,12 @@ updateControls();
 
 </script>
 
-<script id="ng-photo-approved-script">
+<script id="layered-realistic-opening-js">
 (function(){
-  const opening = document.getElementById("ngOpening");
-  const seal = document.getElementById("ngSeal");
-  const openBook = document.getElementById("ngOpenBook");
+  const opening = document.getElementById("layeredOpening");
+  const seal = document.getElementById("layeredSeal");
+  const hint = document.getElementById("layeredHint");
+  const openBook = document.getElementById("layeredOpenBook");
   if(!opening || !seal || !openBook) return;
 
   const oldIntro = document.getElementById("intro");
@@ -8223,23 +8397,23 @@ updateControls();
   if(oldIntro) oldIntro.classList.add("hidden");
   if(oldEnvelope) oldEnvelope.classList.add("hidden");
 
-  let started = false;
-  seal.addEventListener("click", function(){
-    if(started) return;
-    started = true;
+  let running = false;
+  function start(){
+    if(running) return;
+    running = true;
+    opening.classList.add("press");
+    setTimeout(()=>opening.classList.add("crack1"), 560);
+    setTimeout(()=>opening.classList.add("cracks"), 1160);
+    setTimeout(()=>opening.classList.add("broken"), 1950);
+    /* Solo dopo la caduta della ceralacca si muove il lembo. */
+    setTimeout(()=>opening.classList.add("opening"), 3600);
+  }
+  seal.addEventListener("click", start);
+  if(hint) hint.addEventListener("click", start);
 
-    opening.classList.add("ng-photo-press");
-    setTimeout(()=>opening.classList.add("ng-photo-crack1"), 650);
-    setTimeout(()=>opening.classList.add("ng-photo-cracks"), 1350);
-    setTimeout(()=>opening.classList.add("ng-photo-break"), 2350);
-
-    /* L'apertura arriva solo dopo che la ceralacca ha avuto il tempo di rompersi. */
-    setTimeout(()=>opening.classList.add("ng-photo-open"), 3450);
-  });
-
-  openBook.addEventListener("click", function(){
+  openBook.addEventListener("click", ()=>{
     if(book) book.classList.remove("hidden");
-    opening.classList.add("ng-photo-leave");
+    opening.classList.add("leave");
     setTimeout(()=>opening.remove(), 950);
   });
 })();
